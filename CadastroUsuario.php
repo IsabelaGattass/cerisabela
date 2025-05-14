@@ -38,7 +38,7 @@
                     class="form-control">
             </div>
             
-
+  <label for="papel" class="form-label">PAPEL</label>
             <select class="form-select" aria-label="Escolha seu papel">
   <option selected>Selecione seu papel</option>
   <option value="1">Administrador</option>
