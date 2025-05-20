@@ -38,8 +38,8 @@
                     class="form-control">
             </div>
             <div class="col-12">
-                <label for="papel" class="form-label">SELECIONE SEU PAPEL</label>
-                <select class="form-select" aria-label="Escolha seu papel:">
+                <label for="tipoFuncionario" class="form-label">SELECIONE SEU PAPEL</label>
+                <select class="form-select" aria-label="Escolha seu papel:" name="tipoFuncionario">
                     <option selected>Selecione seu papel</option>
                     <option value="1">Administrador</option>
                     <option value="2">gerente</option>
@@ -49,8 +49,9 @@
                 </select>
             </div>
 
+
             <div class="col-12">
-                <button type="submit" name="btnGravar" class="btn btn-success">Gravar</button>
+                <button type="submit" name="btnGravar" class="btn btn-success">Cadastrar</button>
             </div>
         </form>
     </main>

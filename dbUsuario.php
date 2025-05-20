@@ -5,13 +5,18 @@ if (filter_has_var(INPUT_POST, "btnGravar")) {
     });
 
     // Criando uma instância da classe Raca
-    $raca = new Raca;
-    $raca->setNome(filter_input(INPUT_POST, 'raca'));
-
+    $idFuncionario = new Usuario();
+    $idFuncionario->setnome(filter_input(INPUT_POST, 'nome'));
+    $idFuncionario->setcpf(filter_input(INPUT_POST, 'cpf'));
+    $idFuncionario->setidFuncionario(filter_input(INPUT_POST, 'idFuncionario '));
+    $idFuncionario->setemail(filter_input(INPUT_POST, 'email'));
+    $idFuncionario->settelefone(filter_input(INPUT_POST, 'telefone'));
+    $idFuncionario->setsenha(filter_input(INPUT_POST, 'senha'));
+    $idFuncionario->settipoFuncionario(filter_input(INPUT_POST, 'tipoFuncionario'));
     // Tenta adicionar e exibe mensagens para o usuário
-    if ($raca->add()) {  
-        echo "<script>window.alert('Raça adicionada com sucesso.'); window.location.href='racas.php';</script>";
+    if ($idFuncionario->add()) {
+        echo "<script>window.alert('Usuario cadastrado com sucesso.'); window.location.href='racas.php';</script>";
     } else {
-        echo "<script>window.alert('Erro ao adicionar raça.'); window.open(document.referrer,'_self');</script>";
+        echo "<script>window.alert('Erro ao cadastrar usuario.'); window.open(document.referrer,'_self');</script>";
     }
 }
