@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Times new roman", sans-serif;
+}
+
+body {
+    background-color: rgb(176, 205, 238);
+    color: rgb(2, 21, 85)
+}
+
+header {
+    background-color: rgb(26, 64, 112);
+    color: rgba(183, 186, 212, 0.979);
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    background-color: rgb(17, 27, 83);
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: rgb(164, 169, 231);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgb(104, 177, 226);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(87, 57, 121);
+}
+
+.dest{
+    background-image: url('../images/logosite.png.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color:black;
+    font-size:24px;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container img {
+    width: 50%;
+    max-width: 100px;
+    height: auto;
+    border: 10px;
+}
+
+.text {
+    width: 50%;
+    padding: 20%;
+
+}
+
+section:nth-child(even).text {
+    order: -1;
+}
