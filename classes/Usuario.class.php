@@ -68,7 +68,7 @@ class Usuario extends CRUD
     public function add()
     {
         $sql = "INSERT INTO $this->table (nome, cpf, idFuncionario, email, telefone, senha, tipoFuncionario) VALUES (:nome, :cpf, :idFuncionario, :email, :telefone, :senha, :tipoFuncionario)";
-        $stmt = $this->db->prepare($sql);
+         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
         $stmt->bindParam(":cpf", $this->cpf, PDO::PARAM_STR);
         $stmt->bindParam(":idFuncionario", $this->idFuncionario, PDO::PARAM_STR);
@@ -76,8 +76,6 @@ class Usuario extends CRUD
         $stmt->bindParam(":telefone", $this->telefone, PDO::PARAM_STR);
         $stmt->bindParam(":senha", $this->senha, PDO::PARAM_STR);
         $stmt->bindParam(":tipoFuncionario", $this->tipoFuncionario, PDO::PARAM_STR);
-
-
         return $stmt->execute();
     }
     public function update($campo, $idFuncionario)

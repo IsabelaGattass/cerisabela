@@ -4,7 +4,6 @@ if (filter_has_var(INPUT_POST, "btnGravar")) {
         require_once "classes/{$class}.class.php";
     });
 
-    // Criando uma instância da classe Raca
     $idFuncionario = new Usuario();
     $idFuncionario->setnome(filter_input(INPUT_POST, 'nome'));
     $idFuncionario->setcpf(filter_input(INPUT_POST, 'cpf'));
@@ -13,7 +12,7 @@ if (filter_has_var(INPUT_POST, "btnGravar")) {
     $idFuncionario->settelefone(filter_input(INPUT_POST, 'telefone'));
     $idFuncionario->setsenha(filter_input(INPUT_POST, 'senha'));
     $idFuncionario->settipoFuncionario(filter_input(INPUT_POST, 'tipoFuncionario'));
-    // Tenta adicionar e exibe mensagens para o usuário
+
     if ($idFuncionario->add()) {
         echo "<script>window.alert('Usuario cadastrado com sucesso.'); window.location.href='racas.php';</script>";
     } else {
