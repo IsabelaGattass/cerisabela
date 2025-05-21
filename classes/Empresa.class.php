@@ -153,18 +153,19 @@ class Empresa extends CRUD {
 
     public function add()
     {
-        $sql = "INSERT INTO $this->table (nome, cnpj, nome_fant, telefone, email, responsaveis, atv_economica, rede_social, apresentação) VALUES (:nome, :cnpj, :nome_fant, :telefone, :email, :responsaveis, :atv_economica, :rede_social, :apresentação)";
+        $sql = "INSERT INTO $this->table (nome, cnpj, nome_fant, telefone, email, responsaveis, atv_economica, rede_social, apresentacao, historico) 
+               VALUES (:nome, :cnpj, :nome_fant, :telefone, :email, :responsaveis, :atv_economica, :rede_social, :apresentacao, :historico)";
         $stmt = $this->db->prepare($sql);
-        $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
-        $stmt->bindParam(":cnpj", $this->cnpj, PDO::PARAM_STR);
-        $stmt->bindParam(":nome_fant", $this->nome_fant, PDO::PARAM_STR);
-        $stmt->bindParam(":telefone", $this->telefone, PDO::PARAM_STR);
-        $stmt->bindParam(":email", $this->email, PDO::PARAM_STR);
-        $stmt->bindParam(":responsaveis", $this->responsaveis, PDO::PARAM_STR);
-        $stmt->bindParam(":atv_economica", $this->atv_economica, PDO::PARAM_STR);
-        $stmt->bindParam(":rede_social", $this->rede_social, PDO::PARAM_STR);
-        $stmt->bindParam(":apresentação", $this->apresentação, PDO::PARAM_STR);
-        $stmt->bindParam(":historico", $this->historico, PDO::PARAM_STR);
+        $stmt->bindParam(":nome", $this->nome, );
+        $stmt->bindParam(":cnpj", $this->cnpj, );
+        $stmt->bindParam(":nome_fant", $this->nome_fant, );
+        $stmt->bindParam(":telefone", $this->telefone, );
+        $stmt->bindParam(":email", $this->email, );
+        $stmt->bindParam(":responsaveis", $this->responsaveis, );
+        $stmt->bindParam(":atv_economica", $this->atv_economica, );
+        $stmt->bindParam(":rede_social", $this->rede_social, );
+        $stmt->bindParam(":apresentacao", $this->apresentação, );
+        $stmt->bindParam(":historico", $this->historico, );
 
         return $stmt->execute();
     }

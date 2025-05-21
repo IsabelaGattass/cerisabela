@@ -43,19 +43,24 @@
         </div>
 
         <div class="col-md-12"> 
+            <label for="resp" class="form-label">Atividade Econômica</label>
+            <input type="text" name="atv_economica" id="atv_economica" class="form-control">
+        </div>
+
+        <div class="col-md-12"> 
             <label for="resp" class="form-label">Rede Social</label>
-            <input type="text" name="resp" id="resp" class="form-control">
+            <input type="text" name="rede" id="rede" class="form-control">
         </div>
 
 
    <div class="col-mb-6">
   <label for="apresentacao" class="form-label">Apresentação da Empresa</label>
-  <textarea class="form-control" id="apresentacao" rows="3"></textarea>
+  <textarea class="form-control" name= "apresentacao" id="apresentacao" rows="3"></textarea>
   </div>
 
         <div class="col-mb-6">
           <label for="hitorico" class="form-label">Histórico da Empresa</label>
-          <textarea class="form-control" id="hitorico" rows="3"></textarea>
+          <textarea class="form-control" name= "historico" id="historico" rows="3"></textarea>
         </div>
 
         <div class="mb-6 form-check">
@@ -64,7 +69,8 @@
   </div>
 
 
-        <button type="button" class="btn btn-dark">Salvar</button>
+  <button type="submit" name="button" 
+  id="button" class="btn btn-outline-primary">Gravar</button>
         
 
 
