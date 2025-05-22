@@ -12,54 +12,75 @@
         <form action="dbCliente.php" method="post" class="row g3 mt-3">
 
         <div class="col-md-6">
-    <label for="Nome" class="form-label">Digite seu nome</label>
-    <input type="text" class="form-control" id="Nome">
-  </div>
+              <label for="cliente" class="form-label"> nome</label>
+              <input type="text" name="nome" id="nome" 
+              placeholder="digite o seu nome " required 
+              class="form-control">
+        </div>
 
-    <div class="col-md-6">
-    <label for="CPF" class="form-label">Digite seu CPF</label>
-    <input type="text" class="form-control" id="CPF">
+       <div class="col-md-6">
+           <label for="cliente" class="form-label">CPF</label>
+           <input type="text" name="cpf" id="cpf"
+            placeholder="digite o seu cpf " required 
+            class="form-control">
+      </div>
+
+  <div class="col-md-6">
+    <label for="cliente" class="form-label"> email</label>
+    <input type="email"  name="email"  id="email"
+     placeholder="digite o seu email " required 
+     class="form-control">
   </div>
 
   <div class="col-md-6">
-    <label for="Email" class="form-label">Digite seu email</label>
-    <input type="email" class="form-control" id="Email">
-  </div>
-
-  <div class="col-md-6">
-    <label for="Senha" class="form-label">Digite sua senha</label>
-    <input type="password" class="form-control" id="Senha">
+    <label for="cliente" class="form-label">senha</label>
+    <input type="password" name="senha"   id="senha"
+     placeholder="digite a sua senha " required 
+     class="form-control">
   </div>
 
   <div class="col-6">
-    <label for="Telefone" class="form-label">Digite seu telefone</label>
-    <input type="text" class="form-control" id="Telefone" placeholder="+XX X XXX XXX-XXXX.">
+    <label for="cliente" class="form-label"> telefone</label>
+    <input type="text" name="telefone" id="telefone" placeholder="+XX X XXX XXX-XXXX."
+    placeholder="digite a sua senha " required 
+    class="form-control">
   </div>
 
   <div class="col-6">
-    <label for="Cidade" class="form-label">Digite sua cidade</label>
-    <input type="text" class="form-control" id="Cidade">
+    <label for="cliente" class="form-label">cidade</label>
+    <input type="text" name="cidade"  id="cidade"
+     placeholder="digite a sua cidade " required 
+     class="form-control">
   </div>
 
   <div class="col-md-6">
-    <label for="Rua" class="form-label">Digite o nome da rua que você mora</label>
-    <input type="text" class="form-control" id="Rua">
+    <label for="cliente" class="form-label">rua</label>
+    <input type="text"  name="rua" id="rua"
+    placeholder="digite a sua rua " required 
+    class="form-control">
+
   </div>
 
   <div class="col-md-6">
-    <label for="Bairro" class="form-label">Digite o nome do bairro que você mora</label>
-    <input type="text" class="form-control" id="Bairro">
+    <label for="cliente" class="form-label">bairro </label>
+    <input type="text" name="bairro" id="bairro"
+    placeholder="digite o seu bairro " required 
+    class="form-control">
+
   </div>
 
   <div class="col-md-6">
-    <label for="Numero" class="form-label">Digite o número da casa que você mora</label>
-    <input type="text" class="form-control" id="Numero">
+    <label for="cliente" class="form-label"> número da casa </label>
+    <input type="text" name="numero" id="numero"
+    placeholder="digite o numero da sua casa" required 
+    class="form-control">
+
   </div>
 
   
   <div class="col-md-4">
-    <label for="Estado" class="form-label">Selecione o estado que você mora</label>
-    <select id="Estado" class="form-select">
+    <label for="cliente" class="form-label">Selecione o estado que você mora</label>
+    <select id="estado" name="estado" class="form-select">
       <option selected>Escolha...</option>
       <option value="AC">Acre</option>
     <option value="AL">Alagoas</option>
@@ -94,13 +115,18 @@
  
 
   <div class="col-md-2">
-    <label for="CEP" class="form-label">Digite seu CEP</label>
-    <input type="text" class="form-control" id="CEP">
+    <label for="cliente" class="form-label"> CEP</label>
+    <input type="text" name="cep" id="cep"
+    placeholder="digite o seu cep" required 
+    class="form-control">
   </div>
 
   <div class="col-md-2">
-    <label for="DataNasc" class="form-label">Selecione sua data e nascimento</label>
-    <input type="date" class="form-control" id="DataNasc">
+    <label for="cliente" class="form-label"> data de nascimento</label>
+    <input type="date" name="DataNasc" id="DataNasc"
+    placeholder="digite sua data de nascimento" required 
+    class="form-control">
+
   </div>
 
   <div class="col-12">
@@ -113,7 +139,8 @@
   </div>
 
   <div class="col-12">
-    <button type="submit" class="btn btn-primary" name="btnGravar">Cadastrar</button>
+       <button type="submit" name="button" 
+       id="button" class="btn btn-outline-primary">Gravar</button>  
   </div>
         </form>
     </main>

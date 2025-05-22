@@ -1,27 +1,28 @@
 <?php
 
-if (filter_has_var(INPUT_POST, "btnGravar")) {
+if (filter_has_var(INPUT_POST, "button")) {
     spl_autoload_register(function ($cliente) {
         require_once "classes/{$cliente}.class.php";
     });
 
-    $cliente= new Cliente;
-    $cliente->setnome(filter_input(INPUT_POST, 'nome'));
-    $cliente->setid(filter_input(INPUT_POST, 'id'));
-    $cliente->setcpf(filter_input(INPUT_POST, 'cpf'));
-    $cliente->setemail(filter_input(INPUT_POST, 'email'));
-    $cliente->settelefone(filter_input(INPUT_POST, 'telefone'));
-    $cliente->setsenha(filter_input(INPUT_POST, 'senha'));
-    $cliente->setrua(filter_input(INPUT_POST, 'rua'));
-    $cliente->setnumero(filter_input(INPUT_POST, 'numero'));
-    $cliente->setcidade(filter_input(INPUT_POST, 'cidade'));
-    $cliente->setbairro(filter_input(INPUT_POST, 'bairro'));
-    $cliente->setestado(filter_input(INPUT_POST, 'estado'));
-    $cliente->setcep(filter_input(INPUT_POST, 'cep'));
-    $cliente->setdataNasc (filter_input(INPUT_POST, 'dataNasc '));
+    $Cliente= new cliente;
+    $Cliente->setNome(filter_input(INPUT_POST, 'nome'));
+    $Cliente->setCpf(filter_input(INPUT_POST, 'cpf'));
+    $Cliente->setEmail(filter_input(INPUT_POST, 'email'));
+    $Cliente->setTelefone(filter_input(INPUT_POST, 'telefone'));
+    $Cliente->setSenha(filter_input(INPUT_POST, 'senha'));
+    $Cliente->setRua(filter_input(INPUT_POST, 'rua'));
+    $Cliente->setNumero(filter_input(INPUT_POST, 'numero'));
+    $Cliente->setCidade(filter_input(INPUT_POST, 'cidade'));
+    $Cliente->setBairro(filter_input(INPUT_POST, 'bairro'));
+    $Cliente->setEstado(filter_input(INPUT_POST, 'estado'));
+    $Cliente->setCep(filter_input(INPUT_POST, 'cep'));
+    $Cliente->setDataNasc (filter_input(INPUT_POST, 'DataNasc'));
+    
+
 
    
-    if ($cliente->add()) {  
+    if ($Cliente->add()) {  
         echo "<script>window.alert('cliente cadastrado com sucesso.'); window.location.href='CadastroCliente.php';</script>";
     } else {
         echo "<script>window.alert('Erro ao cadastrar cliente.'); window.open(document.referrer,'_self');</script>";

@@ -1,5 +1,5 @@
 <?php
- class Cliente extends CRUD {
+ class cliente extends CRUD {
     protected $table = "Cliente";
     private $id;
     private $cpf;
@@ -14,118 +14,123 @@
     private $estado; 
     private $cep;
     private $dataNasc; 
+   
 
 
 
-    public function getid() {
+
+    public function getId() {
         return $this->id;
     }
 
-    public function setid($id) {
+    public function setId($id) {
         $this->id = $id;
     }
 
-    public function getnome() {
+    public function getNome() {
         return $this->nome;
     }
 
-    public function setnome($nome) {
+    public function setNome($nome) {
         $this->nome = $nome;
     }
 
-     public function getcpf() {
+     public function getCpf() {
         return $this->cpf;
     }
 
-    public function setcpf($cpf) {
+    public function setCpf($cpf) {
         $this->cpf = $cpf;
     }
 
-    public function getemail() {
+    public function getEmail() {
         return $this->email;
     }
 
-    public function setemail($email) {
+    public function setEmail($email) {
         $this->email = $email;
     }
 
-    public function gettelefone() {
+    public function getTelefone() {
         return $this->telefone;
     }
 
-    public function settelefone($telefone) {
+    public function setTelefone($telefone) {
         $this->telefone = $telefone;
     }
 
-     public function getsenha() {
+     public function getSenha() {
         return $this->senha;
     }
 
-    public function setsenha($senha) {
+    public function setSenha($senha) {
         $this->senha = $senha;
     }
 
-    public function getrua() {
+    public function getRua() {
         return $this->rua;
     }
 
-    public function setrua($rua) {
+    public function setRua($rua) {
         $this->rua = $rua;
     }
 
-     public function getcidade() {
+     public function getCidade() {
         return $this->cidade;
     }
 
-    public function setcidade($cidade) {
+    public function setCidade($cidade) {
         $this->cidade = $cidade;
     }
 
-    public function getbairro() {
+    public function getBairro() {
         return $this->bairro;
     }
 
-    public function setbairro($bairro) {
+    public function setBairro($bairro) {
         $this->bairro = $bairro;
     }
 
-    public function getnumero() {
+    public function getNumero() {
         return $this->numero;
     }
 
-    public function setnumero($numero) {
+    public function setNumero($numero) {
         $this->numero = $numero;
     }
 
-     public function getestado() {
+     public function getEstado() {
         return $this->estado;
     }
 
-    public function setestado($estado) {
+    public function setEstado($estado) {
         $this->estado = $estado;
     }
 
     
-     public function getcep() {
+     public function getCep() {
         return $this->cep;
     }
 
-    public function setcep($cep) {
+    public function setCep($cep) {
         $this->cep = $cep;
     }
 
-         public function getdataNasc() {
+         public function getDataNasc() {
         return $this->dataNasc;
     }
 
-    public function setdataNasc($dataNasc) {
+    public function setDataNasc($dataNasc) {
         $this->dataNasc = $dataNasc;
     }
+  
+
 
 
 
     public function add() {
-        $sql = "INSERT INTO $this->table (nome, cpf, email, telefone, senha, rua, cidade, bairro, numero, estado, cep, dataNasc) VALUES (:nome, :cpf, :email, :telefone, :senha, :rua, :cidade, :bairro, :numero, :estado, :cep, :dataNasc)";
+        $sql = "INSERT INTO $this->table (nome, cpf, email, telefone, senha, rua, cidade, bairro, numero, estado, cep, dataNasc) 
+                VALUES (:nome, :cpf, :email, :telefone, :senha, :rua, :cidade, :bairro, :numero, :estado, :cep, :dataNasc)";
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(':nome', $this->nome);
         $stmt->bindParam(':cpf', $this->cpf);
@@ -139,7 +144,6 @@
         $stmt->bindParam(':estado', $this->estado);
         $stmt->bindParam(':cep', $this->cep);
         $stmt->bindParam(':dataNasc', $this->dataNasc);
-
         return $stmt->execute();
     }
     
