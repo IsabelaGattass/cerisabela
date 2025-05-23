@@ -62,7 +62,8 @@
             <img src="images/gearok.png" alt="Estrutura da empresa">
             <div class="texto">
                 <h2>Nossa Estrutura</h2>
-                <p>Contamos com trabalho de qualidade, laboratórios modernos, áreas de tecnologia e gestão eficiente.</p>
+                <p>Contamos com trabalho de qualidade, laboratórios modernos, áreas de tecnologia e gestão eficiente.
+                </p>
             </div>
         </div>
 
