@@ -8,9 +8,20 @@
 
     <title>Cadastro Empresas</title>
 </head>
-<body>
+
+<body class="bg-blue">
+    <header class="bg-primary text-white py-3 mb -4">
+        <div clas="container text-center">
+ <figure class="text-center">
+  <blockquote class="display-6">
+    <p>Cadastro da Empresa</p>
+  </blockquote>
+</figure>
+        </div>
+    </header>
+    
 <main class = "container">
-    <form action="dbEmpresa.php" method="post" class=" row g3 mt-3">
+    <form action="dbEmpresa.php" method="post" class="row g3 mt-3">
 
     <div class="col-md-6"> 
             <label for="nome" class="form-label">Nome da Empresa</label>
@@ -29,12 +40,14 @@
 
         <div class="col-md-6"> 
             <label for="cnpj" class="form-label">CNPJ</label>
-            <input type="text" name="cnpj" id="cnpj" class="form-control">
+            <input type="text" name="cnpj" id="cnpj" placeholder="XX.XXX.XXX/XXXX-XX" required 
+            class="form-control">
         </div>
 
         <div class="col-md-6"> 
             <label for="telefone" class="form-label">Telefone</label>
-            <input type="text" name="telefone" id="telefone" class="form-control">
+            <input type="text" name="telefone" id="telefone" placeholder="+XX X XXX XXX-XXXX." required 
+            class="form-control">
         </div>
 
         <div class="col-md-6"> 
@@ -47,20 +60,20 @@
             <input type="text" name="atv_economica" id="atv_economica" class="form-control">
         </div>
 
-        <div class="col-md-12"> 
+        <div class="mb-3"> 
             <label for="resp" class="form-label">Rede Social</label>
             <input type="text" name="rede" id="rede" class="form-control">
         </div>
 
 
-   <div class="col-mb-6">
+   <div class="mb-3">
   <label for="apresentacao" class="form-label">Apresentação da Empresa</label>
-  <textarea class="form-control" name= "apresentacao" id="apresentacao" rows="3"></textarea>
+  <textarea class="form-control" name="apresentacao" id="apresentacao" rows="3"></textarea>
   </div>
 
-        <div class="col-mb-6">
+        <div class="mb-3">
           <label for="hitorico" class="form-label">Histórico da Empresa</label>
-          <textarea class="form-control" name= "historico" id="historico" rows="3"></textarea>
+          <textarea class="form-control" name="historico" id="historico" rows="3"></textarea>
         </div>
 
         <div class="mb-6 form-check">
@@ -70,15 +83,7 @@
 
 
   <button type="submit" name="button" 
-  id="button" class="btn btn-outline-primary">Gravar</button>
-        
-
-
-
-
-
-
-
+  id="button" class="btn btn-outline-primary">Gravar</button> 
     </form>
 </main>
 
