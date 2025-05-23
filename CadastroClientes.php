@@ -7,25 +7,33 @@
     <link rel="stylesheet" href="CSS/baseAdmin.css">
     <title>Cadastro Cliente</title>
 </head>
-<body>
-    <main class = "container">
-        <form action="dbCliente.php" method="post" class="row g3 mt-3">
 
-        <div class="col-md-6">
+<body class = "bg-ligth">
+<header class="bg-primary text-white py-3 mb -4">
+  <div class="container text-center">
+    <h1 class="h3">Cadastro de Cliente</h1>
+  </div>
+</header>
+
+
+    <main class = "container">
+    <form action="dbCliente.php" method="post" class="row g3 mt-3">
+
+        <div class="col-md-12">
               <label for="cliente" class="form-label"> nome</label>
               <input type="text" name="nome" id="nome" 
               placeholder="digite o seu nome " required 
               class="form-control">
         </div>
 
-       <div class="col-md-6">
+       <div class="col-md-4">
            <label for="cliente" class="form-label">CPF</label>
            <input type="text" name="cpf" id="cpf"
             placeholder="digite o seu cpf " required 
             class="form-control">
       </div>
 
-  <div class="col-md-6">
+  <div class="col-md-8">
     <label for="cliente" class="form-label"> email</label>
     <input type="email"  name="email"  id="email"
      placeholder="digite o seu email " required 
@@ -78,7 +86,7 @@
   </div>
 
   
-  <div class="col-md-4">
+  <div class="col-md-6">
     <label for="cliente" class="form-label">Selecione o estado que você mora</label>
     <select id="estado" name="estado" class="form-select">
       <option selected>Escolha...</option>
@@ -114,14 +122,14 @@
   </div>
  
 
-  <div class="col-md-2">
+  <div class="col-md-3">
     <label for="cliente" class="form-label"> CEP</label>
     <input type="text" name="cep" id="cep"
     placeholder="digite o seu cep" required 
     class="form-control">
   </div>
 
-  <div class="col-md-2">
+  <div class="col-md-3">
     <label for="cliente" class="form-label"> data de nascimento</label>
     <input type="date" name="DataNasc" id="DataNasc"
     placeholder="digite sua data de nascimento" required 
@@ -130,17 +138,8 @@
   </div>
 
   <div class="col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Minhas informações estão corretas
-      </label>
-    </div>
-  </div>
-
-  <div class="col-12">
        <button type="submit" name="button" 
-       id="button" class="btn btn-outline-primary">Gravar</button>  
+       id="button" class="btn btn-outline-primary">Cadastrar</button>  
   </div>
         </form>
     </main>

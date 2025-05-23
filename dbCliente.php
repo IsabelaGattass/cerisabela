@@ -23,7 +23,7 @@ if (filter_has_var(INPUT_POST, "button")) {
 
    
     if ($Cliente->add()) {  
-        echo "<script>window.alert('cliente cadastrado com sucesso.'); window.location.href='CadastroCliente.php';</script>";
+        echo "<script>window.alert('cliente cadastrado com sucesso.'); window.location.href='CadastroClientes.php';</script>";
     } else {
         echo "<script>window.alert('Erro ao cadastrar cliente.'); window.open(document.referrer,'_self');</script>";
     }
