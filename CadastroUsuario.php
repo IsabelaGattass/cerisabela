@@ -62,7 +62,7 @@ caracteres especiais ou emojis.
             <div class="col-12">
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Confirme minhas informações</label>
+                    <label class="form-check-label" for="exampleCheck1">Confirme suas informações</label>
                 </div>
             </div>
             <div class="col-12">
