@@ -37,15 +37,11 @@
                 <input type="text" name="telefone" id="telefone" placeholder="+XX X XXX XXX-XXXX."
                     placeholder="digite a sua senha " required class="form-control">
             </div>
-            
-            </div>
-            <div class="col-12">
-            <label for="senha" class="form-label">SENHA</label>
-            <input type="password" id="senha" class="form-control" aria-describedby="Digite a sua Senha:">
-            <div id="senha" class="form-text">
-               Sua senha deve ter de 8 a 20 caracteres, conter letras e números e não deve conter espaços,
-caracteres especiais ou emojis.
-            </div>
+
+            <div class="col-md-12">
+                <label for="cliente" class="form-label">SENHA</label>
+                <input type="password" name="senha" id="senha" placeholder="Digite a sua senha:" required
+                    class="form-control">
             </div>
             <div class="col-12">
                 <label for="tipoFuncionario" class="form-label">SELECIONE SEU PAPEL</label>
