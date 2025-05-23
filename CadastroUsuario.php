@@ -9,12 +9,12 @@
     <title>Cadastro Usuário</title>
 </head>
 
-<body class = "bg-ligth">
- <header class ="bg-primary text-white py-3 mb -4">
-<div class=" container text-center">
-    <h1 class="h3" >Cadastro de Usuário</h1>
-</div>
-</header>
+<body class="bg-ligth">
+    <header class="bg-primary text-white py-3 mb -4">
+        <div class=" container text-center">
+            <h1 class="h3">Cadastro de Usuário</h1>
+        </div>
+    </header>
 
     <main class="container">
         <form method="post" action="dbUsuario.php" class="row g-3 mt-3">
@@ -37,10 +37,15 @@
                 <input type="text" name="telefone" id="telefone" placeholder="+XX X XXX XXX-XXXX."
                     placeholder="digite a sua senha " required class="form-control">
             </div>
+            
+            </div>
             <div class="col-12">
-                <label for="senha" class="form-label">SENHA</label>
-                <input type="password" name="senha" id="senha" placeholder="Digite a sua Senha:" required
-                    class="form-control">
+            <label for="senha" class="form-label">SENHA</label>
+            <input type="password" id="senha" class="form-control" aria-describedby="Digite a sua Senha:">
+            <div id="senha" class="form-text">
+               Sua senha deve ter de 8 a 20 caracteres, conter letras e números e não deve conter espaços,
+caracteres especiais ou emojis.
+            </div>
             </div>
             <div class="col-12">
                 <label for="tipoFuncionario" class="form-label">SELECIONE SEU PAPEL</label>
@@ -55,15 +60,14 @@
             </div>
 
             <div class="col-12">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                        Confirmar minhas informações.
-                    </label>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Confirme minhas informações</label>
                 </div>
-                <div class="col-12">
-                    <button type="submit" name="btnGravar" id="button" class="btn btn-success">Cadastrar</button>
-                </div>
+            </div>
+            <div class="col-12">
+                <button type="submit" name="btnGravar" id="button" class="btn btn-success">Cadastrar</button>
+            </div>
         </form>
     </main>
 </body>
