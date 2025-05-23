@@ -9,7 +9,12 @@
     <title>Cadastro Usuário</title>
 </head>
 
-<body>
+<body class = "bg-ligth">
+ <header class ="bg-primary text-white py-3 mb -4">
+<div class=" container text-center">
+    <h1 class="h3" >Cadastro de Usuário</h1>
+</div>
+</header>
 
     <main class="container">
         <form method="post" action="dbUsuario.php" class="row g-3 mt-3">
