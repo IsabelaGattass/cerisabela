@@ -28,9 +28,9 @@
                     class="form-control">
             </div>
             <div class="col-12">
-                <label for="telefone" class="form-label">TELEFONE</label>
-                <input type="text" name="telefone" id="telefone" placeholder="Digite o seu Telefone:" required
-                    class="form-control">
+                <label for="cliente" class="form-label"> TELEFONE</label>
+                <input type="text" name="telefone" id="telefone" placeholder="+XX X XXX XXX-XXXX."
+                    placeholder="digite a sua senha " required class="form-control">
             </div>
             <div class="col-12">
                 <label for="senha" class="form-label">SENHA</label>
@@ -49,13 +49,19 @@
                 </select>
             </div>
 
-
             <div class="col-12">
-                <button type="submit" name="btnGravar" class="btn btn-success">Cadastrar</button>
-            </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Confirmar minhas informações.
+                    </label>
+                </div>
+                <div class="col-12">
+                    <button type="submit" name="btnGravar" id="button" class="btn btn-success">Cadastrar</button>
+                </div>
         </form>
     </main>
-    </body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 
 </html>

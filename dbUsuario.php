@@ -14,7 +14,7 @@ if (filter_has_var(INPUT_POST, "btnGravar")) {
     $idFuncionario->settipoFuncionario(filter_input(INPUT_POST, 'tipoFuncionario'));
 
     if ($idFuncionario->add()) {
-        echo "<script>window.alert('Usuario cadastrado com sucesso.'); window.location.href='racas.php';</script>";
+        echo "<script>window.alert('Usuario cadastrado com sucesso.'); window.location.href='CadastroUsuario.php';</script>";
     } else {
         echo "<script>window.alert('Erro ao cadastrar usuario.'); window.open(document.referrer,'_self');</script>";
     }
