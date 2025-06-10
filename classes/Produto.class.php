@@ -62,5 +62,4 @@ public function setiIdProduto($idProduto)
         $stmt->bindParam(":unidade", $this->unidade, PDO::PARAM_STR);
         return $stmt->execute();
     }
-
 }
