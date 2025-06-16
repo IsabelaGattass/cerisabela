@@ -23,15 +23,18 @@
                 <label for="nome" class="form-label">Nome Completo</label>
                 <input type="text" name="nome" id="nome" placeholder="Digite o seu nome:" required class="form-control">
             </div>
-            <div class="col-12">
-                <label for="cpf" class="form-label">CPF</label>
-                <input type="text" name="cpf" id="cpf" placeholder="Digite o seu CPF:" required class="form-control">
-            </div>
+
             <div class="col-12">
                 <label for="email" class="form-label">EMAIL</label>
                 <input type="email" name="email" id="email" placeholder="Digite o seu Email:" required
                     class="form-control">
             </div>
+            
+            <div class="col-12">
+                <label for="cpf" class="form-label">CPF</label>
+                <input type="text" name="cpf" id="cpf" placeholder="Digite o seu CPF:" required class="form-control">
+            </div>
+
             <div class="col-12">
                 <label for="cliente" class="form-label"> TELEFONE</label>
                 <input type="text" name="telefone" id="telefone" placeholder="+XX X XXX XXX-XXXX."
@@ -48,9 +51,9 @@
                 <select class="form-select" aria-label="Escolha seu papel:" name="tipoFuncionario">
                     <option selected>Selecione seu papel</option>
                     <option value="1">Administrador</option>
-                    <option value="2">gerente</option>
-                    <option value="3">funcionário</option>
-                    <option value="4">cliente comum</option>
+                    <option value="2">Gerente</option>
+                    <option value="3">Funcionário</option>
+                    <option value="4">Cliente Comum</option>
                     <option value="5">Supervisor</option>
                 </select>
             </div>
