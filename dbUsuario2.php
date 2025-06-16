@@ -4,7 +4,7 @@ if (filter_has_var(INPUT_POST, "btnLogin")) {
         require_once "classes/{$class}.class.php";
     });
 
-    $empreendedorismo = new Usuario();
+    $empreendedorismo = new Usuario2();
     $empreendedorismo->setusuario(filter_input(INPUT_POST, 'usuario'));
     $empreendedorismo->setsenha(password_hash($senha, PASSWORD_DEFAULT));
 

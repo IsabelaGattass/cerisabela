@@ -1,7 +1,7 @@
 <?php
 
 
-class Usuario extends CRUD {
+class Usuario2 extends CRUD {
     protected $table = "usuario_3b";
     private $id;
     private $usuario;
