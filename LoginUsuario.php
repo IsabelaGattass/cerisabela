@@ -16,7 +16,7 @@
         <div clas="container text-center">
             <figure class="text-center">
                 <blockquote class="display-6">
-                    <p>Cadastro de Usuário</p>
+                    <p>Tela de Login</p>
                 </blockquote>
             </figure>
         </div>
@@ -36,7 +36,7 @@
 
                 <div class="col-md-12">
                     <label for="senha" class="form-label">Senha</label>
-                    <input type="text" name="senha" id="senha" class="form-control">
+                    <input type="password" name="senha" id="senha" class="form-control">
                     Sua senha deve ter de 8 a 20 caracteres, conter letras e números e não deve conter espaços,
                     caracteres especiais ou emojis.
                 </div>

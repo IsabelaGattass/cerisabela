@@ -6,7 +6,7 @@ if (filter_has_var(INPUT_POST, "btnLogin")) {
 
     $empreendedorismo = new Usuario();
     $empreendedorismo->setusuario(filter_input(INPUT_POST, 'usuario'));
-    $empreendedorismo->setsenha(filter_input(INPUT_POST, 'senha'));
+    $empreendedorismo->setsenha(password_hash($senha, PASSWORD_DEFAULT));
 
 
     if ($idFuncionario->add()) {
