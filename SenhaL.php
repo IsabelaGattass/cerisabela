@@ -15,5 +15,4 @@ if (password_verify("Erica123222", $senha_cripto)) {
 }
 header("Content-Type: text/html; charset=UTF-8");
 
-
 ?>

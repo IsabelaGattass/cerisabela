@@ -9,9 +9,11 @@ if (filter_has_var(INPUT_POST, "btnLogin")) {
     $empreendedorismo->setsenha(password_hash($senha, PASSWORD_DEFAULT));
 
 
-    if ($idFuncionario->add()) {
+    if ($empreendedorismo-> add() ) {
         echo "<script>window.alert('Usuario cadastrado com sucesso.'); window.location.href='LoginUsuario.php';</script>";
     } else {
         echo "<script>window.alert('Erro ao cadastrar usuario.'); window.open(document.referrer,'_self');</script>";
     }
 }
+
+?>
