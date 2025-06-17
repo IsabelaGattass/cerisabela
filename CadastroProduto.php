@@ -26,15 +26,15 @@
             </div>
              <div class="col-12">
                 <label for="nome" class="form-label">Descrição</label>
-                <input type="text" name="Descrição" id="Descrição" placeholder="Digite a descrição:" required class="form-control">
+                <input type="text" name="descricao" id="descricao" placeholder="Digite a descrição:" required class="form-control">
             </div>
              <div class="col-12">
                 <label for="nome" class="form-label">Preço</label>
-                <input type="text" name="preço" id="preço" placeholder="Preço do produto:" required class="form-control">
+                <input type="text" name="preco" id="preco" placeholder="Preço do produto:" required class="form-control">
             </div>
             <div class="col-12">
                 <label for="nome" class="form-label">Unidade</label>
-                <input type="text" name="Unidade" id="Unidade" placeholder="Quantidade de produto:" required class="form-control">
+                <input type="text" name="unidade" id="unidade" placeholder="Quantidade de produto:" required class="form-control">
             </div>
             <div class="col-12">
                 <button type="submit" name="btnGravar" id="btnGravar" class="btn btn-success">Cadastrar</button>

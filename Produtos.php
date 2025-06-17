@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="CSS/baseAdmin.css">
     <title>Produtos</title>
 </head>
+   //<header>  <?php require_once "_parts/_menu.php"; ?>
+    </header>
 
 <body>
     <main class="container mt-3">
@@ -20,7 +22,6 @@
         <table class="cadastroProduto">
             <thead class="table-info">
                 <tr>
-                    <th>#</th>
                     <th>Produto</th>
                     <th>Formatar</th>
                 </tr>
@@ -49,7 +50,7 @@
         </table>
     </main>
     <footer>
-    <?php require_once "_parts/_footer.php"; ?>
+    <?php //require_once "_parts/_footer.php"; ?>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </body>
