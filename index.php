@@ -83,9 +83,10 @@
             <!-- Finalizamos o main -->
     </main>
 
-    <footer>
+    <footer style="text-align: center;">
         <p>&copy; 2025 CERISABELA - Todos os direitos reservados.</p>
     </footer>
+
 
 
 </body>
