@@ -47,26 +47,31 @@
                         <tr>
                             <td><?php echo $produto->idProduto; ?></td>
                             <td class="text-start"><?php echo $produto->nome; ?></td>
-                            <td>
-                                <a href="#" class="btn btn-sm btn-warning me-1" title="Editar">
-                                    <i class="bi bi-pencil-square"></i>
-                                </a>
-                                <a href="#" class="btn btn-sm btn-danger" title="Excluir">
-                                    <i class="bi bi-trash3"></i>
-                                </a>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
+                            <td class="d-flex justify-content-center gap-1">
+                            <form action="<?php echo htmlspecialchars("CadastroProduto.php") ?>" method="post" class="d-flex">
+                                <input type="hidden" name="idProduto" value="<?php echo $produto->idProduto ?>"><button
+                                    name="btnEditar" class="btn btn-primary btn-sm" type="submit"
+                                    onclick="return confirm('Tem certeza que deseja editar o produto?');"><i
+                                        class="bi bi-pencil-square"></i>
+                                </button>
+                            </form>
+                                  <form action="<?php echo htmlspecialchars("CadastroProduto.php") ?>" method="post" class="d-flex">
+                                <input type="hidden" name="idProduto" value="<?php echo $produto->idProduto ?>"><button
+                                    name="btnDeletar" class="btn btn-danger btn-sm" type="submit"
+                                    onclick="return confirm('Tem certeza que deseja deletar o produto?');"><i
+                                        class="bi bi-trash"></i>
+                                </button>
+                            </form>
+                           </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
     </main>
-
-    <footer class="mt-auto">
+    <footer>
         <?php require_once "_parts/_footer.php"; ?>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
-</html>
+</html> 
