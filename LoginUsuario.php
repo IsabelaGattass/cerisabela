@@ -29,7 +29,7 @@
 
 
                 <div class="col-md-12">
-                    <label for="usuario" class="form-label">Usuário</label>
+                    <label for="usuario" class="form-label">Email</label>
                     <input type="text" name="usuario" id="usuario" class="form-control">
                 </div>
 
@@ -49,7 +49,7 @@
 
 
                 <div class="col-3">
-                    <button type="submit" name="btnLogin" class="btn btn-light">Efetuar Login</button>
+                    <button type="submit" name="btnGravar" class="btn btn-light">Efetuar Login</button>
                 </div>
 
             </form>

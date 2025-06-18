@@ -2,9 +2,9 @@
 
 
 class Usuario2 extends CRUD {
-    protected $table = "usuario_3b";
+    protected $table = "usuario";
     private $id;
-    private $usuario;
+    private $email;
     private $senha;
 
     public function getId()
@@ -19,14 +19,14 @@ class Usuario2 extends CRUD {
     }
 
 
-    public function getUsuario()
+    public function getEmail()
     {
-        return $this->usuario;
+        return $this->email;
     }
 
-    public function setUsuario($usuario)
+    public function setEmail($email)
     {
-        $this->usuario = $usuario;
+        $this->email = $email;
 
     }
 
@@ -43,15 +43,12 @@ class Usuario2 extends CRUD {
     }
 
 
-
-
-
     public function add()
     {
-        $sql = "INSERT INTO $this->table (usuario, senha) 
-               VALUES (:usuario, :senha)";
+        $sql = "INSERT INTO $this->table (email, senha) 
+               VALUES (:email, :senha)";
         $stmt = $this->db->prepare($sql);
-        $stmt->bindParam(":usuario", $this->usuario, );
+        $stmt->bindParam(":email", $this->email, );
         $stmt->bindParam(":senha", $this->senha, );
 
 
@@ -60,12 +57,20 @@ class Usuario2 extends CRUD {
 
     public function update(string $campo, int $id)
     {
-        $sql = "UPDATE $this->table SET usuario= :usuario, senha= :senha WHERE $campo= :id";
+        $sql = "UPDATE $this->table SET email= :email, senha= :senha WHERE $campo= :id";
         $stmt = $this->db->prepare($sql);
-        $stmt->bindParam("usuario", $this->usuario, PDO::PARAM_STR);
+        $stmt->bindParam("email", $this->email, PDO::PARAM_STR);
         $stmt->bindParam("senha", $this->senha, PDO::PARAM_STR);
     
         return $stmt->execute();
     }
+
+    public function search(string $campo, string $senha, string $email){
+    $sql = "SELECT * FROM $this->table WHERE $campo = email";
+    $stmt = $this->db->prepare($sql);
+    $stmt->bindParam(":email", $id, PDO::PARAM_INT);
+    $stmt->execute();
+    return $stmt->rowCount() > 0 ? $stmt->fetch(mode: PDO::FETCH_OBJ) : null;
+}
 
 }
