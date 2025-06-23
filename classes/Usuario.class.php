@@ -1,7 +1,7 @@
 <?php
 class Usuario extends CRUD
 {
-    protected $table = "cadastroUsuario";
+    protected $table = "usuario";
     private $idFuncionario;
     private $nome;
     private $cpf;
@@ -67,6 +67,7 @@ class Usuario extends CRUD
     }
     public function add()
     {
+        $senha_cripto = password_hash($this->senha, PASSWORD_DEFAULT);
         $sql = "INSERT INTO $this->table (nome, cpf, idFuncionario, email, telefone, senha, tipoFuncionario) VALUES (:nome, :cpf, :idFuncionario, :email, :telefone, :senha, :tipoFuncionario)";
          $stmt = $this->db->prepare($sql);
         $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
@@ -76,7 +77,8 @@ class Usuario extends CRUD
         $stmt->bindParam(":telefone", $this->telefone, PDO::PARAM_STR);
         $stmt->bindParam(":senha", $this->senha, PDO::PARAM_STR);
         $stmt->bindParam(":tipoFuncionario", $this->tipoFuncionario, PDO::PARAM_STR);
-        return $stmt->execute();
+        $stmt->bindParam(":senha", $senha_cripto);
+        
     }
     public function update($campo, $idFuncionario)
     {
@@ -89,7 +91,17 @@ class Usuario extends CRUD
         $stmt->bindParam(":telefone", $this->telefone, PDO::PARAM_STR);
         $stmt->bindParam(":senha", $this->senha, PDO::PARAM_STR);
         $stmt->bindParam(":tipoFuncionario", $this->tipoFuncionario, PDO::PARAM_STR);
-        return $stmt->execute();
+        
     }
+
+    public function ValidarLogin($email): mixed
+    {
+        $sql = "SELECT * FROM usuario WHERE email = :email";
+        $stmt = $this->db->prepare(query: $sql);
+        $stmt->bindValue(param: ':email', value: $email);
+        $stmt->execute();
+        return $stmt->rowCount() > 0 ? $stmt->fetch(mode: PDO::FETCH_OBJ) : null;
+
+}
 
 }

@@ -1,5 +1,6 @@
 <?php 
 
+
 $senha = "Erica123222";
 
 $senha_cripto = password_hash($senha, PASSWORD_DEFAULT);

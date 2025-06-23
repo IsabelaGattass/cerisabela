@@ -25,9 +25,7 @@
         </header>
 
         <main class="container">
-            <form action="dbUsuario2.php" method="post" class="row g3 mt-3">
-
-
+            <form action="Validacao.php" method="post" class="row g3 mt-3">
                 <div class="col-md-12">
                     <label for="usuario" class="form-label">Email</label>
                     <input type="text" name="usuario" id="usuario" class="form-control">
