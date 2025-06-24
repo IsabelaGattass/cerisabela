@@ -50,12 +50,12 @@
                             <td class="d-flex justify-content-center gap-1">
                             <form action="<?php echo htmlspecialchars("CadastroProduto.php") ?>" method="post" class="d-flex">
                                 <input type="hidden" name="idProduto" value="<?php echo $produto->idProduto ?>"><button
-                                    name="btnEditar" class="btn btn-primary btn-sm" type="submit"
+                                    name="btnAlterar" class="btn btn-primary btn-sm" type="submit"
                                     onclick="return confirm('Tem certeza que deseja editar o produto?');"><i
                                         class="bi bi-pencil-square"></i>
                                 </button>
                             </form>
-                                  <form action="<?php echo htmlspecialchars("CadastroProduto.php") ?>" method="post" class="d-flex">
+                            <form action="<?php echo htmlspecialchars("Produtos.php") ?>" method="post" class="d-flex">
                                 <input type="hidden" name="idProduto" value="<?php echo $produto->idProduto ?>"><button
                                     name="btnDeletar" class="btn btn-danger btn-sm" type="submit"
                                     onclick="return confirm('Tem certeza que deseja deletar o produto?');"><i
