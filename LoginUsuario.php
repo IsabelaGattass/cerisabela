@@ -25,10 +25,10 @@
         </header>
 
         <main class="container">
-            <form action="Validacao.php" method="post" class="row g3 mt-3">
+            <form action="Validacao.php" method="POST">
                 <div class="col-md-12">
-                    <label for="usuario" class="form-label">Email</label>
-                    <input type="text" name="usuario" id="usuario" class="form-control">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" name="email" id="email" class="form-control">
                 </div>
 
 

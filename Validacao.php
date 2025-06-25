@@ -1,34 +1,28 @@
 <?php
-
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $email = filter_input(INPUT_POST,'email', FILTER_SANITIZE_STRING);
-    $senha = filter_input(INPUT_POST,'senha', FILTER_SANITIZE_STRING);
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
+    $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
 
-
-    spl_autoload_register(callback: function ($class): void {
+    spl_autoload_register(function ($class) {
         require_once "Classes/{$class}.class.php";
     });
 
-    $login = new Usuario();
-    $dados = $login->buscarUsuario(email: $email);
+    $Login = new Usuario();
+    $dados = $Login->ValidarLogin($email);
+    
 
-    if ($dados) {
-        if (password_verify(password: $senha, hash: $dados->senha)) {
-            $_SESSION['usuario'] 
-            = $dados->email;
-            $_SESSION['id'] = $dados->id;
-            header('Location: LoginUsuario.php');
-            exit();
-        } else {
-            echo "<script>alert('Senha incorreta'); window.history.back();</script>";
-        }
+    if (password_verify($senha, $dados->senha)) {
+        $_SESSION['email'] = $dados->nome;
+        header("Location: index.php");
+        exit();
     } else {
-        echo "<script>alert('Usuário não encontrado'); window.history.back();</script>";
+         echo "<script>window.alert('Senha/Usuário incorreto.'); window.location.href='LoginUsuario.php';</script>";
     }
 } else {
-    header('Location: LoginUsuario.php');
+    header("Location: index.php");
     exit;
 }
+
 ?>

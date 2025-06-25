@@ -78,6 +78,9 @@ class Usuario extends CRUD
         $stmt->bindParam(":senha", $this->senha, PDO::PARAM_STR);
         $stmt->bindParam(":tipoFuncionario", $this->tipoFuncionario, PDO::PARAM_STR);
         $stmt->bindParam(":senha", $senha_cripto);
+
+        return $stmt->execute();
+
         
     }
     public function update($campo, $idFuncionario)
@@ -91,6 +94,8 @@ class Usuario extends CRUD
         $stmt->bindParam(":telefone", $this->telefone, PDO::PARAM_STR);
         $stmt->bindParam(":senha", $this->senha, PDO::PARAM_STR);
         $stmt->bindParam(":tipoFuncionario", $this->tipoFuncionario, PDO::PARAM_STR);
+
+         return $stmt->execute();
         
     }
 
@@ -100,6 +105,7 @@ class Usuario extends CRUD
         $stmt = $this->db->prepare(query: $sql);
         $stmt->bindValue(param: ':email', value: $email);
         $stmt->execute();
+        
         return $stmt->rowCount() > 0 ? $stmt->fetch(mode: PDO::FETCH_OBJ) : null;
 
 }
