@@ -1,5 +1,6 @@
 <?php 
 
+// código que usei parta testar se a criptografia password_hash iria funcionar
 
 $senha = "Erica123222";
 
