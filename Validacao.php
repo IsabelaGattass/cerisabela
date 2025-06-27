@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// validação e usuário e senha 
+// validação de usuário e senha 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
