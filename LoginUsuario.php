@@ -55,6 +55,10 @@
 
 </body>
 
+   <footer>
+        <?php require_once "_parts/_footer.php"; ?>
+    </footer>
+
 
 
 

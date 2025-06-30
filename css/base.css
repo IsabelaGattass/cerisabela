@@ -24,3 +24,50 @@ padding: 10px;
 margin-top: 20px;
 
 }
+
+footer .r-linha{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;     
+    gap: 10px; 
+}
+
+footer .r-linha-item img{
+    width: 150px;
+    height: auto;           
+}
+
+footer .r-linha-item{
+    width: 400px;
+
+}
+
+footer a{
+    text-decoration: none;
+    font-size: 35px;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.rede-social{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.facebook{
+    background-color: blue;
+}
+
+.instagram{
+    background-image: linear-gradient(45deg, #fcb045, #fd1d1d, #833ab4);
+}
+
+.whatsapp{
+    background-color: rgb(37, 211, 102);
+}

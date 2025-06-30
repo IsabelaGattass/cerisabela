@@ -83,8 +83,8 @@
             <!-- Finalizamos o main -->
     </main>
 
-    <footer style="text-align: center;">
-        <p>&copy; 2025 CERISABELA - Todos os direitos reservados.</p>
+   <footer>
+        <?php require_once "_parts/_footer.php"; ?>
     </footer>
 
 
