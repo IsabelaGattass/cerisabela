@@ -1,0 +1,56 @@
+.dest{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/bannercerisabela.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-size: 24px;
+    font-weight: bolder;
+    text-shadow: 1px 1px 0 rgb(2, 0, 128), 2px 2px 4px rgb(72, 49, 156);
+}
+
+section{
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 2px;
+    background: linear-gradient(to right,  rgb(212, 239, 252));
+    /* background: linear-gradient(to right, rgb(172, 153, 204), #725adb, #ddd);  */
+}
+
+section h2{
+    text-align: flex;
+    font-family: var(--font-secundaria);
+    margin: 20px;
+    border-bottom: 2px solid black;
+    padding: 10px;
+}
+
+section .texto{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+section .texto img{
+    width: 40%;
+}
+
+@media screen and(max-width: 600px) {
+    main{
+        width: 100%;
+    }
+    section .texto{
+        flex-direction: column;
+    }
+    .dest{
+        text-align: center;
+        padding: 15px;
+        height: auto;
+    }
+    section .texto img{
+        width: 50%;
+    }
+}
