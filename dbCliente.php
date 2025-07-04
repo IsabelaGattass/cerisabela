@@ -6,6 +6,7 @@ if (filter_has_var(INPUT_POST, "button")) {
     });
 
     $Cliente= new cliente;
+    $Cliente->setId(filter_input(INPUT_POST, 'id'));
     $Cliente->setNome(filter_input(INPUT_POST, 'nome'));
     $Cliente->setCpf(filter_input(INPUT_POST, 'cpf'));
     $Cliente->setEmail(filter_input(INPUT_POST, 'email'));
@@ -20,11 +21,33 @@ if (filter_has_var(INPUT_POST, "button")) {
     $Cliente->setDataNasc (filter_input(INPUT_POST, 'DataNasc'));
     
 
+    // Verifica se é cadastro novo ou edição
+    $id = filter_input(INPUT_POST, "id");
 
-   
-    if ($Cliente->add()) {  
-        echo "<script>window.alert('cliente cadastrado com sucesso.'); window.location.href='CadastroClientes.php';</script>";
+    if (empty($id)) {
+        // Cadastro novo
+        if ($Cliente->add()) {
+            echo "<script>alert('Cliente cadastrado com sucesso!'); window.location.href='Cadastrados.php';</script>";
+        } else {
+            echo "<script>alert('Erro ao cadastrar cliente.'); window.open(document.referrer,'_self');</script>";
+        }
     } else {
-        echo "<script>window.alert('Erro ao cadastrar cliente.'); window.open(document.referrer,'_self');</script>";
+        // Edição de cliente já existente
+        if ($Cliente->update('id', $id)) {
+            echo "<script>alert('Cliente atualizado com sucesso!'); window.location.href='Cadastrados.php';</script>";
+        } else {
+            echo "<script>alert('Erro ao atualizar cliente.'); window.open(document.referrer,'_self');</script>";
+        }
+    }
+}
+
+// Se clicou no botão Deletar
+if (filter_has_var(INPUT_POST, "btnDeletar")) {
+    $id = intval(filter_input(INPUT_POST, "id"));
+    
+    if ($Cliente->delete("id", $id)) {
+        header("Location: Cadastrados.php");
+    } else {
+        echo "<script>alert('Erro ao excluir cliente.'); window.open(document.referrer, '_self');</script>";
     }
 }
