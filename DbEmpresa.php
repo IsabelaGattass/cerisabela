@@ -22,15 +22,18 @@ if(filter_has_var(INPUT_POST, "button")) {
     //Tenta adicionar e exibe a mensagem ao usuario
  
     if($empresa-> add()) {
-     echo "<script>window.alert('Cadastro adicionado com sucesso.'); windows.location.href=CadastroEmpresa.php;</script>";
+     echo "<script>window.alert('Cadastro adicionado com sucesso.'); windows.location.href='empresas.php';</script>";
     } else { 
      echo "<script>window.alert('Erro ao adicionar cadastro.'); window.open (document.referrer,'_self'); <script>" ;
      
  }
 
+}
+
+  
 
 
 
 
- }
+ 
  
