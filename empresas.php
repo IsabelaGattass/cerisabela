@@ -18,7 +18,7 @@
         </div>
 
         <div class="mb-3">
-            <a href="CadastroProduto.php" class="btn btn-success">
+            <a href="CadastroEmpresa.php" class="btn btn-primary">
                 <i class="bi bi-plus-circle"></i>Nova Empresa</a>
         </div>
 
@@ -39,33 +39,37 @@
                     $e = new Empresa();
                     $empresas = $e->all();
                     foreach ($empresas as $empresa):
-                    ?>
+                        ?>
                         <tr>
                             <td><?php echo $empresa->id_empresa; ?></td>
                             <td class="text-start"><?php echo $empresa->nome; ?></td>
                             <td class="d-flex justify-content-center gap-1">
-                            <form action="<?php echo htmlspecialchars("CadastroEmpresa.php") ?>" method="post" class="d-flex">
-                                <input type="hidden" name="id_empresa" value="<?php echo $empresa->id_empresa ?>"><button
-                                    name="btnEditar" class="btn btn-primary btn-sm" type="submit"
-                                    onclick="return confirm('Tem certeza que deseja editar as informações da empresa?');"><i
-                                        class="bi bi-pencil-square"></i>
-                                </button>
-                            </form>
-                            <form action="<?php echo htmlspecialchars("CadastroEmpresa.php") ?>" method="post" class="d-flex">
-                                <input type="hidden" name="id_empresa" value="<?php echo $empresa->id_empresa ?>"><button
-                                    name="btnDeletar" class="btn btn-danger btn-sm" type="submit"
-                                    onclick="return confirm('Tem certeza que deseja deletar as informações da empresa?');"><i
-                                        class="bi bi-trash"></i>
-                                </button>
-                            </form>
-                           </td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+
+                                <form action="<?php echo htmlspecialchars("CadastroEmpresa.php") ?>" method="post"
+                                    class="d-flex">
+                                    <input type="hidden" name="id_empresa" value="<?php echo $empresa->id_empresa ?>">
+                                    <button name="btnEditar" class="btn btn-primary btn-sm" type="submit"
+                                        onclick="return confirm('Tem certeza que deseja editar as informações da empresa?');">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
+                                </form>
+
+                                <form action="<?php echo htmlspecialchars("DbEmpresa.php") ?>" method="post" class="d-flex">
+                                    <input type="hidden" name="id_empresa"
+                                        value="<?php echo $empresa->id_empresa ?>"><button name="btnDeletar"
+                                        class="btn btn-danger btn-sm" type="submit"
+                                        onclick="return confirm('Tem certeza que deseja deletar as informações da empresa?');"><i
+                                            class="bi bi-trash"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
-</html> 
+</html>
