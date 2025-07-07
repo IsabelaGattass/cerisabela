@@ -1,50 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Mono&family=Tenor+Sans&display=swap');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+:root{
+    --font-primaria: "Libertinus Mono", serif;
+    --font-secundaria: "Tenor Sans", serif;
+    --cor-fundo-claro:#f5f5f5;
+    --cor-fundo-escuro:#233237;
+    --cor-font-clara:#eee;
+    --cor-font-escura:#100f0f;
 }
+
+*{
+    box-sizing: border-box;
+}
+
 body{
-    background-color: #5d97d8;
-    color: #333;
+    background-color: darkslateblue;
+    color: black;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    font-family: var(--font-primaria);
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-font-escura);
+    height: 100vh;
+    padding: 0;
+    margin: 0;
 }
-main {
-    flex: 1;
-}
-footer{
-background-color: rgb(145, 185, 231);
-color: rgb(240, 232, 232);
-text-align: center;
-padding: 10px;
-margin-top: 20px;
 
+main{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 10px;
+}
+
+footer{
+    background-color: rgb(120, 205, 255);
+    color: var(--cor-fundo-claro);
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
 }
 
 footer .r-linha{
     display: flex;
     flex-direction: row;
-    justify-content: center;     
-    gap: 10px; 
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 footer .r-linha-item img{
     width: 150px;
-    height: auto;           
+    height: auto;
 }
 
 footer .r-linha-item{
     width: 400px;
-
+    justify-content: center;
 }
 
 footer a{
     text-decoration: none;
-    font-size: 35px;
+    font-size: 39px;
+    color: var(--cor-font-clara);
     display: flex;
     width: 50px;
     height: 50px;
@@ -65,9 +84,17 @@ footer a{
 }
 
 .instagram{
-    background-image: linear-gradient(45deg, #fcb045, #fd1d1d, #833ab4);
+   background-image: linear-gradient(45deg, #fcb045, #fd1d1d, #833ab4);
 }
 
 .whatsapp{
-    background-color: rgb(37, 211, 102);
+    background-color: seagreen;
+}
+
+@media screen and (max-width: 600px){
+    footer a{
+        width: 40px;
+        height: 40px;
+        font-size: 25px;
+    }
 }

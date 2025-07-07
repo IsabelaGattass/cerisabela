@@ -1,6 +1,69 @@
 @import url('base.css');
 
+header {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-font-escura);
+    align-items: center;
+    gap: 50px;
+}
+
+header .empresa {
+    display: flex;
+    align-self: center;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
 
 header img {
-    width: 150px;
+    width: 50px;
+}
+
+
+.nav-custom {
+    background-color: rgb(120, 205, 255);
+}
+
+.navbar-nav {
+    gap: 20px;
+}
+
+.nav-link {
+    color: var(--cor-font-clara);
+    box-shadow: 0 1px 5px rgba(251, 250, 250, 0.2);
+    border-radius: 12px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--cor-font-clara);
+    box-shadow: 0 16px 32px rgba(32, 3, 3, 0.3);
+    transform: translateY(-4px);
+}
+
+main{
+    width: 90%;
+    max-width: 1200px;
+    margin: 200px auto;
+    padding: 20px;
+    background-color: var(--cor-fundo-claro);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+@media screen and (max-width:992px) {
+    .navbar-link,
+    .nav-link:hover {
+        box-shadow: none;
+        transform: none;
+    }
+}
+
+@media screen and (max-width:600px) {
+    header {
+        flex-direction: column;
+    }
+
 }
