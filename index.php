@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="shortcut icon" href="images/logosite.png.png" type="image/x-icon">
     <title>Cerisabela - Software de Programação</title>
@@ -17,6 +18,31 @@
     </header>
 
     <!-- menu de navegação -->
+     <nav class="navbar navbar-expand-lg nav-custom">
+  <div class="container-fluid">
+
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="sobre">Sobre</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="serviços">Ativiades</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="estrutura">Nossa Estrutura</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contato">Contato</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
     <nav>
         <a href="#sobre">Sobre</a>
         <a href="#serviços">Atividades</a>
