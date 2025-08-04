@@ -134,7 +134,10 @@
         <!-- Finalizamos o main -->
     </main>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f322230caee87ecac536b5b42fc259e78e4a2c2c
    <footer>
         <?php require_once "_parts/_footer.php"; ?>
     </footer>
