@@ -2,7 +2,8 @@
 // inicio da sessão
 session_start();
 
-// confirma se o envio da página foi realmente feito com botao
+// validação de usuário e senha 
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 

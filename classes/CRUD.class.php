@@ -19,7 +19,7 @@ public function all(){
 }
 //Método de buscar registro por campo
 public function search(string $campo,$id){
-    $sql = "SELECT * FROM $this->table WHERE $campo = id";
+    $sql = "SELECT * FROM $this->table WHERE $campo = :id";
     $stmt = $this->db->prepare($sql);
     $stmt->bindParam(":id", $id, PDO::PARAM_INT);
     $stmt->execute();
