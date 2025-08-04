@@ -74,7 +74,7 @@
     <input type="text" name="bairro" id="bairro"
     placeholder="digite o seu bairro " required 
     class="form-control">
-
+    
   </div>
 
   <div class="col-md-6">

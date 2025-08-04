@@ -10,35 +10,39 @@ final class Database
         try {
             $config = parse_ini_file(__DIR__ . '/../config.ini', true)['database'];
             $dsn = '';
+
             if ($config['driver'] == 'mysql') {
                 $dsn = "mysql:host={$config['host']};port={$config['port']};dbname={$config['dbname']};charset=utf8";
             } elseif ($config['driver'] === 'pgsql') {
-                $dsn = "psgql:host={$config['host']};port={$config['port']};dbname={$config['dbname']}";
+                $dsn = "pgsql:host={$config['host']};port={$config['port']};dbname={$config['dbname']};options='--client_encoding=UTF8'";
             } else {
-                throw new Exception("Driver de banco de dados não suportado " . $config['driver']);
+                throw new Exception("Driver de banco de dados não suportado: " . $config['driver']);
             }
+
             $this->connection = new PDO(
                 $dsn,
                 $config['username'],
                 $config['password']
             );
+
             $this->connection->setAttribute(
                 PDO::ATTR_ERRMODE,
                 PDO::ERRMODE_EXCEPTION
             );
         } catch (PDOException $e) {
-            error_log('Erro de conexão' . $e->getMessage());
-            die('Erro ao conectar com o banco de dados. Tente mais tarde');
+            error_log('Erro de conexão: ' . $e->getMessage());
+            die('Erro ao conectar com o banco de dados. Tente mais tarde.');
         }
     }
+
     public static function getInstance()
     {
         if (self::$instance === null) {
             self::$instance = new Database();
         }
         return self::$instance;
-
     }
+
     public function getConnection()
     {
         return $this->connection;
