@@ -137,13 +137,8 @@
         <!-- Finalizamos o main -->
     </main>
 
-<<<<<<< HEAD
    <footer>
         <?php require_once "_parts/_footer.php"; ?>
-=======
-    <footer>
-        <?php require_once "_parts/_footer.php" ?>
->>>>>>> Celso
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
