@@ -19,12 +19,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // cria um objeto novo da classe Usuário
     $Login = new Usuario(); 
 
-    
+    // chama o metodo validar login para validar e procurar o usuario no banco de dados, usando o email/senha digitados
     $dados = $Login->ValidarLogin($email);
     
 
     if (password_verify($senha, $dados->senha)) {
         $_SESSION['email'] = $dados->nome;
+        // redireciona a pagina para o index
         header("Location: index.php");
         exit();
     } else {
