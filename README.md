@@ -10,7 +10,7 @@
 
 ## 👫 Integrantes do Grupo
 - **Isadora** - Responsável por: Página de cadastro de Clientes.
-- **Érica** - Responsável por: Página de de cadastro da Empresa.
+- **Érica** - Responsável por: Página de de cadastro da Empresa e validação.
 - **Celso** - Responsável por: Página Inicial.
 - **Isabela Gattass** - Responsável por: Página de de cadastro da Usuário.
 - **Isabela Gattass** - Responsável por: Página de de cadastro da Produto.
