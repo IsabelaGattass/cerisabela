@@ -1,7 +1,8 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    spl_autoload_register(function ($class) {
-        require_once "classes/{$class}.class.php";
+
+if (filter_has_var(INPUT_POST, "button")) {
+    spl_autoload_register(function ($cliente) {
+        require_once "classes/{$cliente}.class.php";
     });
 
     $produto = new Produto();
