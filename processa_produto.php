@@ -1,8 +1,8 @@
 <?php
 
 if (filter_has_var(INPUT_POST, "button")) {
-    spl_autoload_register(function ($cliente) {
-        require_once "classes/{$cliente}.class.php";
+    spl_autoload_register(function ($produto) {
+        require_once "classes/{$produto}.class.php";
     });
 
     $produto = new Produto();
@@ -11,28 +11,32 @@ if (filter_has_var(INPUT_POST, "button")) {
     $produto->setPreco(filter_input(INPUT_POST, 'preco', FILTER_SANITIZE_ADD_SLASHES));
     $produto->setUnidade(filter_input(INPUT_POST, 'unidade', FILTER_SANITIZE_ADD_SLASHES));
 
-    if (isset($_POST['btnGravar'])) {
+   $idProduto = filter_input(INPUT_POST, "idProduto");
 
+    if (empty($idProduto)) {
+        // Cadastro novo
         if ($produto->add()) {
-            echo "<script>alert('Produto cadastrado com sucesso.'); window.location.href='Produtos.php';</script>";
+            echo "<script>alert('Produto cadastrado com sucesso!'); window.location.href='Produtos.php';</script>";
         } else {
-            echo "<script>alert('Erro ao adicionar Produto.'); window.location.href='CadastroProduto.php';</script>";
+            echo "<script>alert('Erro ao cadastrar produto.'); window.open(document.referrer,'_self');</script>";
         }
-    } elseif (isset($_POST['btnAlterar'])) {
-      
-        $idProduto = filter_input(INPUT_POST, 'idProduto', FILTER_SANITIZE_NUMBER_INT);
-        if ($Produto->update($idProduto)) {
-            echo "<script>alert('Produto alterado com sucesso.'); window.location.href='Produtos.php';</script>";
+    } else {
+        // Edição de cliente já existente
+        if ($produto->update('idProduto', $idProduto)) {
+            echo "<script>alert('Produto atualizado com sucesso!'); window.location.href='Produtos.php';</script>";
         } else {
-            echo "<script>alert('Erro ao alterar Produto.'); window.location.href='Produtos.php';</script>";
+            echo "<script>alert('Erro ao atualizar produto.'); window.open(document.referrer,'_self');</script>";
         }
-    } elseif (isset($_POST['btnDeletar'])) {
+    }
+}
+
+// Se clicou no botão de Deletar
+if (filter_has_var(INPUT_POST, "btnDeletar")) {
+    $idProduto = intval(filter_input(INPUT_POST, "idProduto"));
     
-        $idProduto = filter_input(INPUT_POST, 'idProduto', FILTER_SANITIZE_NUMBER_INT);
-        if ($Produto->delete($idProduto)) {
-            echo "<script>alert('Produto excluído com sucesso.'); window.location.href='Produtos.php';</script>";
-        } else {
-            echo "<script>alert('Erro ao excluir Produto.'); window.location.href='Produtos.php';</script>";
-        }
+    if ($Produto->delete("idProduto", $idProduto)) {
+        header("Location: Produtos.php");
+    } else {
+        echo "<script>alert('Erro ao excluir cliente.'); window.open(document.referrer, '_self');</script>";
     }
 }
