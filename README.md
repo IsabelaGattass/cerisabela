@@ -1,10 +1,5 @@
-# cerisabela
-isadora ficou com Página de cadastro de Clientes.
-Érica ficou com Página de de cadastro da Empresa.
-Celso ficou com Página Inicial.
-Isabela Gattass ficou com Cadastro de Usuário.
 
-# 📚 Projeto [Nome do Sistema]
+# 📚 Projeto [cerisabela]
 
 ---
 
@@ -14,11 +9,11 @@ Isabela Gattass ficou com Cadastro de Usuário.
 ---
 
 ## 👫 Integrantes do Grupo
-- **Aluno 1** - Responsável por: 
-- **Aluno 2** - Responsável por: 
-- **Aluno 3** - Responsável por: 
-- **Aluno 4** - Responsável por: 
-- **Aluno 5** - Responsável por: 
+- **Isadora** - Responsável por: Página de cadastro de Clientes.
+- **Érica** - Responsável por: Página de de cadastro da Empresa.
+- **Celso** - Responsável por: Página Inicial.
+- **Isabela Gattass** - Responsável por: Página de de cadastro da Usuário.
+- **Isabela Gattass** - Responsável por: Página de de cadastro da Produto.
 
 ---
 
@@ -43,13 +38,13 @@ README.md
 ---
 
 ## 🗄️ Banco de Dados
-Nome do banco: **__________**
+Nome do banco: **cerisabela**
 
 Tabelas principais:
-- __________  
-- __________  
-- __________  
-
+- create table empresa
+- create table produto
+- create table cliente
+- create table usuario
 ---
 
 ## 🚀 Como Executar o Projeto
