@@ -1,11 +1,11 @@
 <?php
 
-if (filter_has_var(INPUT_POST, "button")) {
-    spl_autoload_register(function ($produto) {
-        require_once "classes/{$produto}.class.php";
-    });
+spl_autoload_register(function ($produto) {
+    require_once "classes/{$produto}.class.php";
+});
 
-    $produto = new Produto();
+$produto = new Produto();
+if (filter_has_var(INPUT_POST, "btnGravar")) {
     $produto->setNome(filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_ADD_SLASHES));
     $produto->setDescricao(filter_input(INPUT_POST, 'descricao', FILTER_SANITIZE_ADD_SLASHES));
     $produto->setPreco(filter_input(INPUT_POST, 'preco', FILTER_SANITIZE_ADD_SLASHES));
@@ -34,7 +34,7 @@ if (filter_has_var(INPUT_POST, "button")) {
 if (filter_has_var(INPUT_POST, "btnDeletar")) {
     $idProduto = intval(filter_input(INPUT_POST, "idProduto"));
     
-    if ($Produto->delete("idProduto", $idProduto)) {
+    if ($produto->delete("idProduto", $idProduto)) {
         header("Location: Produtos.php");
     } else {
         echo "<script>alert('Erro ao excluir cliente.'); window.open(document.referrer, '_self');</script>";
