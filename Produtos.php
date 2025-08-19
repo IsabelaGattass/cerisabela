@@ -55,7 +55,7 @@
                                         class="bi bi-pencil-square"></i>
                                 </button>
                             </form>
-                            <form action="<?php echo htmlspecialchars("Produtos.php") ?>" method="post" class="d-flex">
+                            <form action="<?php echo htmlspecialchars("processa_produto.php") ?>" method="post" class="d-flex">
                                 <input type="hidden" name="idProduto" value="<?php echo $produto->idProduto ?>"><button
                                     name="btnDeletar" class="btn btn-danger btn-sm" type="submit"
                                     onclick="return confirm('Tem certeza que deseja deletar o produto?');"><i
