@@ -33,16 +33,19 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#sobre">Sobre</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#servicos">Atividades</a>
+                        <a class="nav-link" href="CadastroEmpresa.php">Empresa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#estrutura">Nossa Estrutura</a>
+                        <a class="nav-link" href="CadastroClientes.php">Cliente</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contato">Contato</a>
+                        <a class="nav-link" href="CadastroUsuario.php">Usuário</a>
                     </li>
                 </ul>
             </div>
