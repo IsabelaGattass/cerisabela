@@ -3,19 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="CSS/baseAdmin.css">
-    <title>Cadastro Cliente</title>
+
+    <title>Cadastro Clientes</title>
 </head>
-
-<body class = "bg-ligth">
-<header class="bg-primary text-white py-3 mb -4">
-  <div class="container text-center">
-    <h1 class="h3">Cadastro de Cliente</h1>
-  </div>
-</header>
-
-
+ <?php
+        spl_autoload_register(function ($class) {
+            require_once "classes/{$class}.class.php";
+        });
+        if (filter_has_var(INPUT_POST, "id")) {
+            $edtcliente = new cliente();
+            $id_cliente = intval(filter_input(INPUT_POST, "id"));
+            $cliente = $edtcliente->search("id", $id);
+        }
+        ?>
+<body class="bg-blue">
+    <header class="bg-primary text-white py-3 mb -4">
+        <div class="container text-center">
+ <figure class="text-center">
+  <blockquote class="display-6">
+    <p>Cadastro de Cliente</p>
+  </blockquote>
+</figure>
+        </div>
+    </header>
     <main class = "container">
     <form action="dbCliente.php" method="post" class="row g3 mt-3">
 
