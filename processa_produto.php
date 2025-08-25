@@ -1,42 +1,42 @@
 <?php
-
-spl_autoload_register(function ($produto) {
-    require_once "classes/{$produto}.class.php";
-});
-
-$produto = new Produto();
+// Verifica se o botão "Gravar" foi enviado via POST
 if (filter_has_var(INPUT_POST, "btnGravar")) {
-    $produto->setNome(filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_ADD_SLASHES));
-    $produto->setDescricao(filter_input(INPUT_POST, 'descricao', FILTER_SANITIZE_ADD_SLASHES));
-    $produto->setPreco(filter_input(INPUT_POST, 'preco', FILTER_SANITIZE_ADD_SLASHES));
-    $produto->setUnidade(filter_input(INPUT_POST, 'unidade', FILTER_SANITIZE_ADD_SLASHES));
 
-   $idProduto = filter_input(INPUT_POST, "idProduto");
+    // Autoloader: carrega automaticamente as classes da pasta "classes/"
+    spl_autoload_register(function ($class) {
+        require_once "classes/{$class}.class.php";
+    });
 
-    if (empty($idProduto)) {
-        // Cadastro novo
-        if ($produto->add()) {
-            echo "<script>alert('Produto cadastrado com sucesso!'); window.location.href='Produtos.php';</script>";
-        } else {
-            echo "<script>alert('Erro ao cadastrar produto.'); window.open(document.referrer,'_self');</script>";
-        }
-    } else {
-        // Edição de cliente já existente
-        if ($produto->update('idProduto', $idProduto)) {
-            echo "<script>alert('Produto atualizado com sucesso!'); window.location.href='Produtos.php';</script>";
-        } else {
-            echo "<script>alert('Erro ao atualizar produto.'); window.open(document.referrer,'_self');</script>";
-        }
-    }
-}
+    // Cria um novo objeto da classe Usuario
+    $usuario = new Usuario();
 
-// Se clicou no botão de Deletar
-if (filter_has_var(INPUT_POST, "btnDeletar")) {
-    $idProduto = intval(filter_input(INPUT_POST, "idProduto"));
+    // Define os valores recebidos do formulário
+    $usuario->setnome(filter_input(INPUT_POST, 'nome'));              // Nome do usuário
+    $usuario->setcpf(filter_input(INPUT_POST, 'cpf'));                // CPF
+    $usuario->setidFuncionario(filter_input(INPUT_POST, 'idFuncionario')); // ID do funcionário
+    $usuario->setemail(filter_input(INPUT_POST, 'email'));            // E-mail
+    $usuario->settelefone(filter_input(INPUT_POST, 'telefone'));      // Telefone
     
-    if ($produto->delete("idProduto", $idProduto)) {
-        header("Location: Produtos.php");
+    // Captura a senha enviada no formulário
+    $senha = filter_input(INPUT_POST, 'senha');
+    // Criptografa a senha antes de salvar (mais seguro)
+    $usuario->setsenha(password_hash($senha, PASSWORD_DEFAULT));
+
+    // Define o tipo de funcionário (admin, comum, etc.)
+    $usuario->settipoFuncionario(filter_input(INPUT_POST, 'tipoFuncionario'));
+
+    // Tenta salvar o usuário no banco de dados
+    if ($usuario->add()) {
+        // Se der certo → exibe alerta e redireciona para CadastroUsuario.php
+        echo "<script>
+                window.alert('Usuário cadastrado com sucesso.');
+                window.location.href='CadastroUsuario.php';
+              </script>";
     } else {
-        echo "<script>alert('Erro ao excluir cliente.'); window.open(document.referrer, '_self');</script>";
+        // Se der erro → exibe alerta e volta para a página anterior
+        echo "<script>
+                window.alert('Erro ao cadastrar usuário.');
+                window.open(document.referrer,'_self');
+              </script>";
     }
 }
