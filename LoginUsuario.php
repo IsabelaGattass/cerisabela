@@ -11,8 +11,10 @@
 
     </head>
 
+    <!-- Layout da Tela de Login -->
+
 <body class="bg-blue">
-    <header class="bg-info.bg-gradient text-white py-3 mb -4">
+    <header class="bg-info.bg-gradient text-black py-3 mb -4">
         <div clas="container text-center">
             <figure class="text-center">
                 <blockquote class="display-6">
