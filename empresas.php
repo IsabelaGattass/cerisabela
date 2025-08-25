@@ -27,8 +27,17 @@
                 <thead class="table-primary">
                     <tr>
                         <th>#</th>
-                        <th>Empresas</th>
+                        <th>Empresa</th>
                         <th>Ações</th>
+                        <th>CNPJ</th>
+                        <th>Nome Fantasia</th>
+                        <th>Telefone</th>
+                        <th>Email</th>
+                        <th>Responsáveis</th>
+                        <th>Atividade Econômica</th>
+                        <th>Rede Social</th>
+                        <th>Apresentação</th>
+                        <th>Histórico</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,6 +53,13 @@
                             <td><?php echo $empresa->id_empresa; ?></td>
                             <td class="text-start"><?php echo $empresa->nome; ?></td>
                             <td class="d-flex justify-content-center gap-1">
+
+                            <td><?php echo $empresa->id_empresa; ?></td>
+                            <td class="text-start"><?php echo $empresa->cnpj; ?></td>
+                            <td class="d-flex justify-content-center gap-1">
+
+
+
 
                                 <form action="<?php echo htmlspecialchars("CadastroEmpresa.php") ?>" method="post"
                                     class="d-flex">
