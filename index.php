@@ -103,13 +103,8 @@
         <!-- Finalizamos o main -->
     </main>
 
-<<<<<<< HEAD
     <footer>
         <?php require_once "_parts/_footer.php" ?>
-=======
-   <footer>
-        <?php require_once "_parts/_footer.php"; ?>
->>>>>>> a5a3ab5b0a8c1cb9522d42ca75fa0b1667e1ffea
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
