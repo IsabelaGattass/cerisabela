@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/baseSite.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="shortcut icon" href="images/logosite.png.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/banner.png" type="image/x-icon">
     <title>Cerisabela - Software de Programação</title>
 </head>
 
-<body>
+<body style="background-color:#111b53;">
     <!-- nosso cabeçalho -->
     <header>
-        <img src="images/logosite.png.png" alt="Logo da Empresa">
+        <img src="images/banner.png" alt="Logo da Empresa">
         <div class="empresa">
             <h1>CERISABELA</h1>
             <p>Especializada em Software de Programação</p>
