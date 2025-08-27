@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/baseSite.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="shortcut icon" href="images/banner.png" type="image/x-icon">
-    <title>Cerisabela - Software de Programação</title>
+    <title>Cerisabela - Esmaltes</title>
 </head>
 
 <body style="background-color:#111b53;">

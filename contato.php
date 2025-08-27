@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/baseSite.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/banner.png" type="image/x-icon">
     <title>Cerisabela - Esmaltes</title>
 </head>
 
