@@ -18,7 +18,7 @@
         <img src="images/banner.png" alt="Logo da Empresa">
         <div class="empresa">
             <h1>CERISABELA</h1>
-            <p>Especializada em Software de Programação</p>
+            <p>Especializada em Unhas</p>
         </div>
     </header>
 
