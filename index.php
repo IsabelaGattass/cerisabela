@@ -24,37 +24,6 @@
 
     <!-- menu de navegação -->
 
-     <nav class="navbar navbar-expand-lg nav-custom">
-  <div class="container-fluid">
-
-    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="sobre">Sobre</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="serviços">Ativiades</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="estrutura">Nossa Estrutura</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contato">Contato</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-    <nav>
-        <a href="#sobre">Sobre</a>
-        <a href="#serviços">Atividades</a>
-        <a href="#estrutura">Nossa Estrutura</a>
-        <a href="#contato">Contato</a>
-
     <nav class="navbar navbar-expand-lg nav-custom" data-bs-theme="dark">
         <div class="container-fluid">
             <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -134,12 +103,8 @@
         <!-- Finalizamos o main -->
     </main>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> f322230caee87ecac536b5b42fc259e78e4a2c2c
-   <footer>
-        <?php require_once "_parts/_footer.php"; ?>
+    <footer>
+        <?php require_once "_parts/_footer.php" ?>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
