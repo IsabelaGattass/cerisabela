@@ -67,7 +67,7 @@
         <section id="servicos">
             <h2>Atividades</h2>
             <div class="texto">
-                <img src="atividade.png" alt="Atividades da empresa">
+                <img src="images/atividade.png" alt="Atividades da empresa">
                 <ul>
                     <li>Serviços de Manicure.</li>
                     <li>Serviços de Pedicure.</li>
@@ -82,7 +82,7 @@
         <section id="estrututa">
             <h2>Nossa Estrutura</h2>
             <div class="texto">
-                <img src="estrutura.png" alt="Estrutura da empresa">
+                <img src="images/estrutura.png" alt="Estrutura da empresa">
                 <p>Contamos com trabalho de qualidade, salão confortável e gestão eficiente.
                 </p>
             </div>
