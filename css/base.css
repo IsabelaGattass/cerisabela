@@ -20,7 +20,7 @@ body{
     display: flex;
     flex-direction: column;
     font-family: var(--font-primaria);
-    background-color: var(--cor-fundo-claro);
+    background-color: #aee5fa;
     color: var(--cor-font-escura);
     height: 100vh;
     padding: 0;
@@ -35,7 +35,7 @@ main{
 }
 
 footer{
-    background-color: rgb(120, 205, 255);
+    background-color: #89daff;
     color: var(--cor-fundo-claro);
     text-align: center;
     padding: 10px;
