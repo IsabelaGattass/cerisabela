@@ -56,7 +56,7 @@
         </div>
 
         <section id="sobre">
-            <h2>Sobre Nós</h2>
+            <h2></h2>
             <div class="texto">
                 <img src="images/sobreNos.png" alt="Sobre a empresa">
                 <p>Somos uma empresa referência nas unhas, com muitas opções de esmaltes, diversas cores e tipos, utilizando práticas robustas e desenvolvimentos de excelência.</p>
@@ -65,7 +65,7 @@
         </section>
 
         <section id="servicos">
-            <h2>Atividades</h2>
+            <h2></h2>
             <div class="texto">
                 <img src="images/atividade.png" alt="Atividades da empresa">
                 <ul>
@@ -80,9 +80,9 @@
         </section>
 
         <section id="estrututa">
-            <h2>Nossa Estrutura</h2>
+            <h2></h2>
             <div class="texto">
-                <img src="images/estrutura.png" alt="Estrutura da empresa">
+               <img src="images/estrutura.png" alt="Estrutura da empresa">
                 <p>Contamos com trabalho de qualidade, salão confortável e gestão eficiente.
                 </p>
             </div>
