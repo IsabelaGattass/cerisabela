@@ -85,7 +85,7 @@
                                 </form>
 
                                 <!-- Formulário para deletar produto -->
-                                <form action="dbProduto.php" method="post" class="d-flex">
+                                <form action="processa_produto.php" method="post" class="d-flex">
                                     <!-- Campo oculto com ID do produto -->
                                     <input type="hidden" name="idProduto" value="<?= $produto->idProduto ?>">
                                     
