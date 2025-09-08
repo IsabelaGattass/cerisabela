@@ -8,11 +8,11 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="CSS/base.css" />
+  <link rel="stylesheet" href="css/index.css" />
   <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
   <!-- Seu CSS -->
-  <link rel="stylesheet" href="css/index.css">
-   <link rel="stylesheet" href="CSS/baseSite.css" />
+  <link rel="stylesheet" href="css/layout.css">
+   <link rel="stylesheet" href="css/baseSite.css" />
 </head>
 <body>
 
@@ -20,6 +20,7 @@
     <?php require_once "_parts/_menu.php"; ?>
   </header>
 
+  <!-- não é nosso esse coiso de vitamina (O NOSSO É ESMALTES) -->
 <div class="bloco-fundo-vitaminas largura-total">
     <div class="conteudo-esmaltes">
         <h1 class="titulo-esmaltação">
@@ -42,7 +43,7 @@
     <!-- Lado direito: texto -->
     <div class="map-texto">
       <h2>Nosso Endereço</h2>
-      <p><strong>Local:</strong> IFRO- Campus Cacoal</p>
+      <p><strong>Local:</strong> IFRO - Campus Cacoal</p>
       <p><strong>WhatsApp:</strong> (69) 9 9999-9999</p>
       <p><strong>E-mail:</strong> cerisabela@gmail.com</p>
       <p><strong>Horário:</strong> Segunda a Sexta, das 9h30 às 18H</p>
