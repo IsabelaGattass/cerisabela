@@ -15,7 +15,7 @@
 <body style="background-color:#111b53;">
     <!-- nosso cabeçalho -->
     <header>
-        <img src="images/banner.png" alt="Logo da Empresa">
+        <img src="images/logo.png" alt="Logo da Empresa">
         <div class="empresa">
             <h1>CERISABELA</h1>
             <p>Especializada em Unhas</p>
@@ -32,6 +32,9 @@
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index2.php">Home</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#sobre">Sobre</a>
                     </li>
