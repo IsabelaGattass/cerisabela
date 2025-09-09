@@ -63,7 +63,43 @@
             </div>
         </nav>
 
+<<<<<<< HEAD
+        <div class="container">
+            <div id="carouselMain" class="carousel slide carousel-dark" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselMain" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#carouselMain" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#carouselMain" data-bs-slide-to="2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="3000">
+                        <img src="images/carrosel/carr1.png" class="d-none d-md-block w-100" alt="">
+                        <img src="images/carrosel/carr1small.png" class="d-block d-md-none  w-100" alt="">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="img/carrosel/carr2.png" class="d-none d-md-block w-100" alt="">
+                        <img src="img/carrosel/carr2small.png" class="d-block d-md-none  w-100" alt="">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="images/carrosel/carr3.png" class="d-none d-md-block w-100" alt="">
+                        <img src="images/carrosel/carr3small.png" class="d-block d-md-none  w-100" alt="">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselMain" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselMain" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    <span class="visually-hidden">Próximo</span>
+                </button>
+            </div>
+            <hr class="mt-3">
+        </div>
+
+=======
         <!-- CONTEÚDO -->
+>>>>>>> 6965f349bbe1fcf9bc9a4e8c702dcc362733a9a5
         <main class="flex-fill">
             <div class="container">
 
