@@ -46,9 +46,8 @@
       <p><strong>Local:</strong> IFRO - Campus Cacoal</p>
       <p><strong>WhatsApp:</strong> (69) 9 9999-9999</p>
       <p><strong>E-mail:</strong> cerisabela@gmail.com</p>
-      <p><strong>Horário:</strong> Segunda a Sexta, das 9h30 às 18H</p>
       <p><strong>Horário de Funcionamento:</strong></p>
-      <p>Segunda a Sexta-feira, das 9h30 às 17h30</p>
+      <p>Segunda a Sexta-feira, das 9h30 às 18h</p>
     </div>
   </div>
 </div>
