@@ -45,23 +45,26 @@
                         <td><?php echo $cliente->id; ?></td>
                         <td><?php echo $cliente->nomeCliente; ?></td> 
                         <td class="d-flex justify-content-center gap-1">
-                            <!-- Botão Editar -->
-                            <form action="CadastroClientes.php" method="post" class="d-flex">
+
+
+
+                           <!--botao editar-->
+                           <form action="CadastroClientes.php" method="post">
                                 <input type="hidden" name="id" value="<?php echo $cliente->id; ?>">
-                                <button name="btnEditar" class="btn btn-primary btn-sm" type="submit"
-                                    onclick="return confirm('Tem certeza que deseja editar o cliente?');">
+                                <button type="submit" name="btnEditar" class="btn btn-primary">
                                     <i class="bi bi-pencil-square"></i>
                                 </button>
                             </form>
-
-                            <!-- Botão Deletar -->
-                            <form action="dbCliente.php" method="post" class="d-flex">
+                            <!--botao apagar-->
+                            <form action="dbCliente.php" method="post">
                                 <input type="hidden" name="id" value="<?php echo $cliente->id; ?>">
-                                <button name="btnDeletar" class="btn btn-danger btn-sm" type="submit"
-                                    onclick="return confirm('Tem certeza que deseja apagar o cliente?');">
-                                    <i class="bi bi-trash"></i>
+                                <button type="submit" name="btnDeletar" class="btn btn-danger">
+                                    <i class="bi bi-pencil-trash"></i>
                                 </button>
                             </form>
+
+
+
                         </td>
                     </tr>
                 <?php endforeach; ?>
