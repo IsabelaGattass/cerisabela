@@ -20,6 +20,7 @@
                 $idInicial= filter_input(INPUT_GET, 'idInicial');
             endif;
 ?>
+<body>
 
 <body>
 
