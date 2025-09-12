@@ -61,13 +61,6 @@
      class="form-control">
   </div>
 
-  <div class="col-md-6">
-    <label for="cliente" class="form-label">rua</label>
-    <input type="text"  name="rua" id="rua"
-    placeholder="digite a sua rua " required 
-    class="form-control">
-
-  </div>
 
   <div class="col-md-6">
     <label for="cliente" class="form-label">bairro </label>

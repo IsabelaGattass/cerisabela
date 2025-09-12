@@ -55,13 +55,19 @@
                             </form>
 
                             <!-- Botão Deletar -->
-                            <form action="dbCliente.php" method="post" class="d-flex">
-                                <input type="hidden" name="id" value="<?php echo $cliente->id; ?>">
-                                <button name="btnDeletar" class="btn btn-danger btn-sm" type="submit"
-                                    onclick="return confirm('Tem certeza que deseja apagar o cliente?');">
-                                    <i class="bi bi-trash"></i>
-                                </button>
-                            </form>
+                             <form action="<?php echo htmlspecialchars("dbCliente.php") ?>" method="post" class="d-flex">
+                                    <input type="hidden" name="id"
+                                        value="<?php echo $cliente->id ?>"><button name="btnDeletar"
+                                        class="btn btn-danger btn-sm" type="submit"
+                                        onclick="return confirm('Tem certeza que deseja deletar as informações da empresa?');"><i
+                                            class="bi bi-trash"></i>
+                                    </button>
+                                </form>
+
+
+
+
+
                         </td>
                     </tr>
                 <?php endforeach; ?>

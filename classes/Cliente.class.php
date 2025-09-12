@@ -9,7 +9,6 @@ class Cliente extends CRUD {
     private $email;
     private $telefone;
     private $senha;
-    private $rua;
     private $cidade;
     private $bairro;
     private $numero;
@@ -40,10 +39,6 @@ class Cliente extends CRUD {
 
     public function getSenha() {
         return $this->senha;
-    }
-
-    public function getRua() {
-        return $this->rua;
     }
 
     public function getCidade() {
@@ -95,10 +90,6 @@ class Cliente extends CRUD {
         $this->senha = $senha;
     }
 
-    public function setRua($rua) {
-        $this->rua = $rua;
-    }
-
     public function setCidade($cidade) {
         $this->cidade = $cidade;
     }
@@ -126,15 +117,14 @@ class Cliente extends CRUD {
     // MÉTODOS CRUD
     public function add() {
         $sql = "INSERT INTO $this->table (
-        nomeCliente, cpf_cliente, email, telefone, senha, rua, cidade,
-        bairro, numero, estado, cep, dataNasc) VALUES (:nomeCliente, :cpf_cliente, :email, :telefone, :senha, :rua,:cidade, :bairro, :numero, :estado, :cep, :dataNasc)";
+        nomeCliente, cpf_cliente, email, telefone, senha, cidade,
+        bairro, numero, estado, cep, dataNasc) VALUES (:nomeCliente, :cpf_cliente, :email, :telefone, :senha, :cidade, :bairro, :numero, :estado, :cep, :dataNasc)";
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(':nomeCliente', $this->nomeCliente);
         $stmt->bindParam(':cpf_cliente', $this->cpf_cliente);
         $stmt->bindParam(':email', $this->email);
         $stmt->bindParam(':telefone', $this->telefone);
         $stmt->bindParam(':senha', $this->senha);
-        $stmt->bindParam(':rua', $this->rua);
         $stmt->bindParam(':cidade', $this->cidade);
         $stmt->bindParam(':bairro', $this->bairro);
         $stmt->bindParam(':numero', $this->numero);
@@ -146,7 +136,7 @@ class Cliente extends CRUD {
 
     public function update($campo, $id) {
         $sql = "UPDATE $this->table SET
-        nomeCliente = :nomeCliente,cpf_cliente = :cpf_cliente,email = :email,telefone = :telefone,senha = :senha,rua = :rua,cidade = :cidade,bairro = :bairro,numero = :numero,estado = :estado,cep = :cep,dataNasc = :dataNasc
+        nomeCliente = :nomeCliente,cpf_cliente = :cpf_cliente,email = :email,telefone = :telefone,senha = :senha,cidade = :cidade,bairro = :bairro,numero = :numero,estado = :estado,cep = :cep,dataNasc = :dataNasc
         WHERE $campo = :id";
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(':nomeCliente', $this->nomeCliente);
@@ -154,7 +144,6 @@ class Cliente extends CRUD {
         $stmt->bindParam(':email', $this->email);
         $stmt->bindParam(':telefone', $this->telefone);
         $stmt->bindParam(':senha', $this->senha);
-        $stmt->bindParam(':rua', $this->rua);
         $stmt->bindParam(':cidade', $this->cidade);
         $stmt->bindParam(':bairro', $this->bairro);
         $stmt->bindParam(':numero', $this->numero);

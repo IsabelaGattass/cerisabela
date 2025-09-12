@@ -12,7 +12,6 @@ if (filter_has_var(INPUT_POST, "button")) {
     $Cliente->setEmail(filter_input(INPUT_POST, 'email'));
     $Cliente->setTelefone(filter_input(INPUT_POST, 'telefone'));
     $Cliente->setSenha(filter_input(INPUT_POST, 'senha'));
-    $Cliente->setRua(filter_input(INPUT_POST, 'rua'));
     $Cliente->setNumero(filter_input(INPUT_POST, 'numero'));
     $Cliente->setCidade(filter_input(INPUT_POST, 'cidade'));
     $Cliente->setBairro(filter_input(INPUT_POST, 'bairro'));
