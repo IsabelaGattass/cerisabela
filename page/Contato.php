@@ -1,6 +1,6 @@
 <h2>Contato</h2>
 <div class="texto">
-    <img src="../images/ctt_preto.png" alt="Contato da empresa">
+    <img src="./images/ctt_preto.png" alt="Contato da empresa">
     <div>
         <p>Email: contato@cerisabela.com</p>
         <p>Telefone: (99) 99999-9999</p>
