@@ -22,9 +22,11 @@
             <h3 class="m-0">Página Inicial</h3>
         </div>
 
+        <!-- Botao Novo -->
+
         <div class="mb-3">
-            <a href="CadastroEmpresa.php" class="btn btn-primary">
-                <i class="bi bi-plus-circle"></i> Novo
+            <a href="CadastroInicial.php" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> 
             </a>
         </div>
 
