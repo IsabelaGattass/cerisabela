@@ -23,7 +23,7 @@ session_start();  // Inicia a sessão PHP, permitindo armazenar e recuperar dado
     <title>Cerisabela - Esmaltes</title>
 </head>
 
-<body style="background-color:#111b53;"> <!-- Define o fundo da página com a cor #111b53 -->
+<body style="background-color:#111b53;"> <!-- Define o fundo da página com a cor #bde3eeff -->
     <!-- Cabeçalho da página -->
     <header>
         <img src="images/logo.png" alt="Logo da Empresa"> <!-- Logo da empresa -->
@@ -40,7 +40,7 @@ session_start();  // Inicia a sessão PHP, permitindo armazenar e recuperar dado
             <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                 aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span> <!-- Ícone de hambúrguer para o menu em dispositivos pequenos -->
+                <span class="navbar-toggler-icon"></span> <!-- Ícone para o menu em dispositivos pequenos -->
             </button>
 
             <!-- Menu de navegação com links para as seções -->
