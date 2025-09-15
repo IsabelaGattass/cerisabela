@@ -51,14 +51,7 @@ for ($i = 0; $i < 12; $i++) {
                     <p class="card-text truncar-3l"><?= $produto['descricao'] ?></p>
                 </div>
                 <div class="card-footer">
-                    <form method="post" action="page/carrinho.php">
-                        <input type="hidden" name="nome" value="<?= $produto['nome'] ?>">
-                        <input type="hidden" name="preco" value="<?= $produto['preco'] ?>">
-                        <input type="hidden" name="descricao" value="<?= $produto['descricao'] ?>">
-                        <input type="hidden" name="img" value="<?= $produto['imagem'] ?>">
-                        <input type="hidden" name="qtd" value="1">
-                        <button type="submit" class="btn btn-outline-info">Adicionar ao Carrinho</button>
-                    </form>
+                    
                     <small class="text-success">Disponível</small>
                 </div>
             </div>

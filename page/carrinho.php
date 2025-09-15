@@ -40,28 +40,28 @@ if (!$existe) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/esmaltes/emt1.png">
     <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
     <link rel="manifest" href="img/favicon/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="images/esmaltes/emt1.png">
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/estilos.css">
 
-    <title>Quitanda Online :: Carrinho de Compras</title>
+    <title>CERISABELA :: Carrinho de Compras</title>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
     <div class="d-flex flex-column wrapper">
         <nav class="navbar navbar-expand-lg navbar-dark bg-danger border-bottom shadow-sm mb-3">
             <div class="container">
-                <a class="navbar-brand" href=""><b>Quitanda Online</b></a>
+                <a class="navbar-brand" href=""><b>CERISABELA</b></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target=".navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -69,27 +69,27 @@ if (!$existe) {
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="../index.php">Principal</a>
+                            <a class="nav-link text-white" href="index.php">Principal</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="../index.php#Produtos">Produtos</a>
+                            <a class="nav-link text-white" href="home.php">Produtos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="../index.php#contato">Contato</a>
+                            <a class="nav-link text-white" href="contato.php">Contato</a>
                         </li>
                     </ul>
                     <div class="align-self-end">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="cadastro.html" class="nav-link text-white">Quero Me Cadastrar</a>
+                                <a href="CadastroUsuario.php" class="nav-link text-white">Quero Me Cadastrar</a>
                             </li>
                             <li class="nav-item">
-                                <a href="login.html" class="nav-link text-white">Entrar</a>
+                                <a href="login.php" class="nav-link text-white">Entrar</a>
                             </li>
                             <li class="nav-item">
                                 <span class="badge rounded-pill bg-light text-danger position-absolute ms-4 mt-0"
                                     title="5 produto(s) no carrinho"><small>5</small></span>
-                                <a href="carrinho.html" class="nav-link text-white">
+                                <a href="carrinho.php" class="nav-link text-white">
                                     <i class="bi-cart" style="font-size:24px;line-height:24px;"></i>
                                 </a>
                             </li>
@@ -109,24 +109,27 @@ if (!$existe) {
                     } else {
                         foreach ($_SESSION['carrinho'] as $index => $item) {
                             $subtotal = $item['preco'] * $item['qtd'];
-                    ?>
-                            <li class="list-group-item py-3" data-index="<?= $index ?>" data-preco="<?= $item['preco'] ?>" data-qtd="<?= $item['qtd'] ?>">
+                            ?>
+                            <li class="list-group-item py-3" data-index="<?= $index ?>" data-preco="<?= $item['preco'] ?>"
+                                data-qtd="<?= $item['qtd'] ?>">
 
                                 <div class="row g-3 align-items-center">
                                     <div class="col-4 col-md-3 col-lg-2">
-                                        <img style="height: 100px; width: auto; object-fit: contain;" src="../../<?= $item['img'] ?>" class="img-thumbnail">
+                                        <img style="height: 100px; width: auto; object-fit: contain;"
+                                            src="../../<?= $item['img'] ?>" class="img-thumbnail">
                                     </div>
                                     <div class="col-8 col-md-6 col-lg-7">
-                                        <h4><?= htmlspecialchars((string)$item['nome']) ?></h4>
-                                        <p><?= htmlspecialchars((string)$item['descricao']) ?></p>
+                                        <h4><?= htmlspecialchars((string) $item['nome']) ?></h4>
+                                        <p><?= htmlspecialchars((string) $item['descricao']) ?></p>
                                     </div>
                                     <div class="col-12 col-lg-3 text-end">
                                         <small class="text-secondary">
                                             Qtd: <?= htmlspecialchars($item['qtd'] ?? 0) ?> |
-                                            Unit: R$ <?= number_format((float)($item['preco'] ?? 0), 2, ",", ".") ?>
+                                            Unit: R$ <?= number_format((float) ($item['preco'] ?? 0), 2, ",", ".") ?>
                                         </small><br>
 
-                                        <span class="fw-bold subtotal">Subtotal: R$ <?= number_format($subtotal, 2, ",", ".") ?></span><br>
+                                        <span class="fw-bold subtotal">Subtotal: R$
+                                            <?= number_format($subtotal, 2, ",", ".") ?></span><br>
                                         <button class="btn btn-sm btn-outline-danger mt-1 btn-remover">
                                             <i class="bi-trash"></i> Remover
                                         </button>
@@ -147,48 +150,16 @@ if (!$existe) {
             </div>
         </main>
 
-        <footer class="border-top text-muted bg-light mt-auto">
-            <div class="container">
-                <div class="row py-3">
-                    <div class="col-12 col-md-4 text-center">
-                        &copy; 2020 - Quitanda Online Ltda ME<br>
-                        Rua Virtual Inexistente, 171, Compulândia/PC <br>
-                        CPNJ 99.999.999/0001-99
-                    </div>
-                    <div class="col-12 col-md-4 text-center">
-                        <a href="privacidade.html" class="text-decoration-none text-dark">
-                            Política de Privacidade
-                        </a><br>
-                        <a href="termos.html" class="text-decoration-none text-dark">
-                            Termos de Uso
-                        </a><br>
-                        <a href="quemsomos.html" class="text-decoration-none text-dark">
-                            Quem Somos
-                        </a><br>
-                        <a href="trocas.html" class="text-decoration-none text-dark">
-                            Trocas e Devoluções
-                        </a>
-                    </div>
-                    <div class="col-12 col-md-4 text-center">
-                        <a href="contato.html" class="text-decoration-none text-dark">
-                            Contato pelo Site
-                        </a><br>
-                        E-mail: <a href="mailto:email@dominio.com" class="text-decoration-none text-dark">
-                            email@dominio.com
-                        </a><br>
-                        Telefone: <a href="phone:28999990000" class="text-decoration-none text-dark">
-                            (28) 99999-0000
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <footer>
+            <?php require_once "_parts/_footer.php" ?>
         </footer>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
         document.querySelectorAll('.btn-remover').forEach(btn => {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function () {
                 const li = this.closest('li');
                 const preco = parseFloat(li.dataset.preco) || 0;
                 const qtd = parseInt(li.dataset.qtd) || 0;
