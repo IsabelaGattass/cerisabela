@@ -2,13 +2,17 @@
 session_start();
 
 // Recebe os dados do formulário
-$produto = [
-    "nome" => $_POST['nome'],
-    "preco" => $_POST['preco'],
-    "descricao" => $_POST['descricao'],
-    "img" => $_POST['img'],
-    "qtd" => $_POST['qtd']
-];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $produto = [
+        "nome" => $_POST['nome'] ?? '',
+        "preco" => $_POST['preco'] ?? 0,
+        "descricao" => $_POST['descricao'] ?? '',
+        "img" => $_POST['img'] ?? '',
+        "qtd" => $_POST['qtd'] ?? 1
+    ];
+} else {
+    $produto = [];
+}
 
 // Inicializa o carrinho se não existir
 if (!isset($_SESSION['carrinho'])) {
@@ -30,8 +34,6 @@ if (!$existe) {
     $_SESSION['carrinho'][] = $produto; // adiciona novo produto
 }
 
-
-
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -41,10 +43,10 @@ if (!$existe) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" sizes="180x180" href="images/esmaltes/emt1.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/esmaltes/emt1.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/esmaltes/emt1.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/esmaltes/emt1.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/esmaltes/emt1.png">
     <link rel="manifest" href="img/favicon/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="images/esmaltes/emt1.png">
@@ -116,7 +118,7 @@ if (!$existe) {
                                 <div class="row g-3 align-items-center">
                                     <div class="col-4 col-md-3 col-lg-2">
                                         <img style="height: 100px; width: auto; object-fit: contain;"
-                                            src="../../<?= $item['img'] ?>" class="img-thumbnail">
+                                            src="images/esmaltes/emt1<?= $item['img'] ?>" class="img-thumbnail">
                                     </div>
                                     <div class="col-8 col-md-6 col-lg-7">
                                         <h4><?= htmlspecialchars((string) $item['nome']) ?></h4>

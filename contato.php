@@ -33,20 +33,9 @@
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="home.php">Home</a>
+          <a class="nav-link" href="index.php">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="sobre">Sobre</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="serviços">Ativiades</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="estrutura">Nossa Estrutura</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contato">Contato</a>
-        </li>
+    
       </ul>
     </div>
   </div>
@@ -85,7 +74,7 @@
         <section id="estrututa">
             <h2></h2>
             <div class="texto">
-               <img src="images/estrutura.png" alt="Estrutura da empresa">
+               <img src="images/estrututa.png" alt="Estrutura da empresa">
                 <p>Contamos com trabalho de qualidade, salão confortável e gestão eficiente.
                 </p>
             </div>

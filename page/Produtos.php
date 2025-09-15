@@ -51,10 +51,18 @@ for ($i = 0; $i < 12; $i++) {
                     <p class="card-text truncar-3l"><?= $produto['descricao'] ?></p>
                 </div>
                 <div class="card-footer">
-                    
+
                     <small class="text-success">Disponível</small>
                 </div>
             </div>
         </div>
     <?php endforeach; ?>
+</div>
+<div style="display: flex; justify-content: center; align-items: center; height: 20vh;">
+    <a href="https://wa.me/556999083582?text=Olá%2C%20gostaria%20de%20realizar%20um%20pedido!"
+       class="btn btn-primary" target="_blank">
+        Para realizar pedido
+    </a>
+</div>
+</div>
 </div>
