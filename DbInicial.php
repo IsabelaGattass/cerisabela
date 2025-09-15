@@ -11,7 +11,6 @@ if (filter_has_var(INPUT_POST, "btnGravar")) {
     $inicial->setTitulo(filter_input(INPUT_POST, "titulo", FILTER_SANITIZE_ADD_SLASHES));
     $inicial->setSubtitulo(filter_input(INPUT_POST, "subtitulo", FILTER_SANITIZE_ADD_SLASHES));
     $inicial->setInfo(filter_input(INPUT_POST, "info", FILTER_SANITIZE_ADD_SLASHES));
-    $inicial->setImagem(filter_input(INPUT_POST, "imagem", FILTER_SANITIZE_ADD_SLASHES));
 
        if ($inicial->add()) {
         echo "<script>alert('Informações cadastradas com sucesso.'); window.location.href='iniciais.php';</script>";

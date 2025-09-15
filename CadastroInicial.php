@@ -39,6 +39,7 @@
         <label for="titulo" class="form-label">Título</label>
         <input type="text" name="titulo" id="titulo" placehoader="Digite o título de sua preferência" required
           class="form-control" value="">
+          
       </div>
       <div class="col-md-6 mt-3">
         <label for="subtitulo" class="form-label">Subtítulo</label>
@@ -52,16 +53,23 @@
         <textarea class="form-control" name="info" id="info" rows="3"></textarea>
       </div>
 
-      </div>
+              <div class="mb-3">
+            <a href="gerImgInicial.php" class="btn btn-info">
+                <i class="bi bi-plus-circle"></i>Adicionar Imagem</a>
+        </div>
+
       <div class="col-12 mt-3">
-        <label for="imagem" class="form-label">Imagem</label>
-        <input type="file" name="imagem" id="imagem" class="form-control" accept=".png, .jpg, .jpeg" required>
-      </div>
-      <div class="col-12 mt-3">
-        <button type="submit" name="btnGravar" class="btn btn-primary">Gravar</button>
+        <button type="submit" class="btn btn-outline-info">Gravar</button>
       </div>
     </form>
   </main>
+
+
+     <footer>
+        <?php require_once "_parts/_footer.php"; ?>
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 
 </body>
 

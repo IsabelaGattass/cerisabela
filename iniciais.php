@@ -8,10 +8,10 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Ícones Bootstrap (Necessário para <i class="bi bi-trash">, etc.) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    
+
     <!-- Seu CSS personalizado -->
     <link rel="stylesheet" href="CSS/baseAdmin.css">
 </head>
@@ -26,7 +26,7 @@
 
         <div class="mb-3">
             <a href="CadastroInicial.php" class="btn btn-primary">
-                <i class="bi bi-plus-circle"></i> 
+                <i class="bi bi-plus-circle"></i>Nova Empresa</a>
             </a>
         </div>
 
@@ -39,17 +39,15 @@
                         <th>Título</th>
                         <th>Subtítulo</th>
                         <th>Informações</th>
-                        <th>Imagem</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    // Autoload das classes
                     spl_autoload_register(function ($class) {
                         require_once "classes/{$class}.class.php";
                     });
 
-                    // Instância da classe Inicial e obtenção dos dados
+
                     $i = new Inicial();
                     $inicio = $i->all();
 
@@ -63,11 +61,7 @@
                                 <td><?= $inicial->subtitulo; ?></td>
                                 <td><?= $inicial->info; ?></td>
                                 <td>
-                                    <?php if (!empty($inicial->imagem)): ?>
-                                        <img src="<?= $inicial->imagem; ?>" alt="Imagem" width="80">
-                                    <?php else: ?>
-                                        Sem imagem
-                                    <?php endif; ?>
+
                                 </td>
                                 <td class="d-flex justify-content-center gap-1">
 

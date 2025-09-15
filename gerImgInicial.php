@@ -15,26 +15,25 @@
     </header>
     <main class="container">
         <div class="titutlo mt-3">
-            <h3>Adicionar Imagem</h3>
+            <h3>Adicionar Imagem escolhida</h3>
         </div>
         <?php
         spl_autoload_register(function ($class) {
             require_once "classes/{$class}.class.php";
         });
-        $idAnimal = null;
+        $$idInicial = null;
         if(filter_has_var(INPUT_POST, "btnEditar")):
             
             $i = new ImgInicial(); 
             $idImg = intval(filter_input(INPUT_POST, "idImg"));
             $imagem = $i->search('id_foto', $idImg);
-            $idAnimal = $foto->fk_animal;
 
-            elseif(filter_has_var(INPUT_GET, 'idAnimal')):
-                $idAnimal = filter_input(INPUT_GET, 'idAnimal');
+            elseif(filter_has_var(INPUT_GET, '$idInicial')):
+                $$idInicial = filter_input(INPUT_GET, '$idInicial');
             endif;
         ?>
         <form method="post" action="dbInicial.php" class="row g-3 mt-3" enctype="multipart/form-data">
-            <input type="hidden" name="idAnimal" value=" <?php echo $idAnimal ?? null ?>">
+            <input type="hidden" name="$idInicial" value=" <?php echo $$idInicial ?? null ?>">
             <input type="hidden" name="idImg" value="<?php echo $imagem->id_imagem ?? null; ?>">
             <input type="hidden" name="imagemAntiga" value="<?php echo $imagem->nome ?? null; ?>">
             <div class="col-md-6 mt-3">
@@ -53,7 +52,7 @@
                 <?php echo empty($imagem->id_imagem) ? "required" : null ?> >
             </div>
             <div class="col-12 mt-3">
-                <button type="submit" name="btnGravar" class="btn btn-primary">Gravar</button>
+                <button type="submit" class="btn btn-outline-info">Gravar</button>
             </div>
         </form>
     </main>
