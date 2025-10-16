@@ -59,7 +59,7 @@ session_start();  // Inicia a sessão PHP, permitindo armazenar e recuperar dado
     
     <main> <!-- Conteúdo principal da página -->
         <div class="dest">
-            Qualidade e Capacidade em esmaltes! <!-- Mensagem principal -->
+         <!-- Mensagem principal -->
         </div>
 
         <!-- Seções que são carregadas dinamicamente -->
