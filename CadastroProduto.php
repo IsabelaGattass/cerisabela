@@ -9,18 +9,19 @@
     <link rel="stylesheet" href="CSS/baseAdmin.css">
     <title>Cadastro Produto</title>
 </head>
-<?php 
+<?php
 spl_autoload_register(function ($class) {
-        require_once "classes/{$class}.class.php";
-    });
+    require_once "classes/{$class}.class.php";
+});
 $produto = null;
 if (isset($_POST['idProduto']) && !empty($_POST['idProduto'])) {
-   
+
     $p = new Produto();
     $produto = $p->search('idProduto', $_POST['idProduto']);
-    
+
 }
 ?>
+
 <body class="bg-light">
     <!-- Cabeçalho -->
     <header class="bg-primary text-white py-3 mb-4">
@@ -36,70 +37,46 @@ if (isset($_POST['idProduto']) && !empty($_POST['idProduto'])) {
         </div>
 
         <!-- Formulário de cadastro/edição -->
-<form id="formProduto" method="post" action="processa_produto.php" class="row g-3 mt-3">
+        <form id="formProduto" method="post" action="processa_produto.php" class="row g-3 mt-3">
 
-    <!-- Campo oculto para edição -->
-    <input type="hidden" name="idProduto" value="<?= $produto->idProduto ?? '' ?>">
+            <!-- Campo oculto para edição -->
+            <input type="hidden" name="idProduto" value="<?= $produto->idProduto ?? '' ?>">
 
-    <!-- Nome do Produto -->
-    <div class="col-12">
-        <label for="nome" class="form-label">Nome do Produto</label>
-        <input type="text" 
-               name="nome" 
-               id="nome" 
-               placeholder="Digite o nome do produto:" 
-               required 
-               class="form-control"
-               value="<?= htmlspecialchars($produto->nome ?? '') ?>">
-    </div>
+            <!-- Nome do Produto -->
+            <div class="col-12">
+                <label for="nome" class="form-label">Nome do Produto</label>
+                <input type="text" name="nome" id="nome" placeholder="Digite o nome do produto:" required
+                    class="form-control" value="<?= htmlspecialchars($produto->nome ?? '') ?>">
+            </div>
 
-    <!-- Descrição -->
-    <div class="col-12">
-        <label for="descricao" class="form-label">Descrição</label>
-        <input type="text" 
-               name="descricao" 
-               id="descricao" 
-               placeholder="Digite a descrição:" 
-               required 
-               class="form-control"
-               value="<?= htmlspecialchars($produto->descricao ?? '') ?>">
-    </div>
+            <!-- Descrição -->
+            <div class="col-12">
+                <label for="descricao" class="form-label">Descrição</label>
+                <input type="text" name="descricao" id="descricao" placeholder="Digite a descrição:" required
+                    class="form-control" value="<?= htmlspecialchars($produto->descricao ?? '') ?>">
+            </div>
 
-    <!-- Preço -->
-    <div class="col-12">
-        <label for="preco" class="form-label">Preço</label>
-        <input type="number" 
-               name="preco" 
-               id="preco" 
-               placeholder="Ex: 19,99" 
-               step="0.01" 
-               min="0" 
-               required 
-               class="form-control"
-               value="<?= htmlspecialchars($produto->preco ?? '') ?>">
-    </div>
+            <!-- Preço -->
+            <div class="col-12">
+                <label for="preco" class="form-label">Preço</label>
+                <input type="number" name="preco" id="preco" placeholder="Ex: 19,99" step="0.01" min="0" required
+                    class="form-control" value="<?= htmlspecialchars($produto->preco ?? '') ?>">
+            </div>
 
-    <!-- Unidade -->
-    <div class="col-12">
-        <label for="unidade" class="form-label">Unidade</label>
-        <input type="number" 
-               name="unidade" 
-               id="unidade" 
-               placeholder="Quantidade de produto:" 
-               step="1" 
-               min="1" 
-               required 
-               class="form-control"
-               value="<?= htmlspecialchars($produto->unidade ?? '') ?>">
-    </div>
+            <!-- Unidade -->
+            <div class="col-12">
+                <label for="unidade" class="form-label">Unidade</label>
+                <input type="number" name="unidade" id="unidade" placeholder="Quantidade de produto:" step="1" min="1"
+                    required class="form-control" value="<?= htmlspecialchars($produto->unidade ?? '') ?>">
+            </div>
 
-    <!-- Botão -->
-    <div class="col-12">
-        <button type="submit" name="btnGravar" id="btnGravar" class="btn btn-success">
-            <?= $produto ? 'Salvar Alterações' : 'Cadastrar' ?>
-        </button>
-    </div>
-</form>
+            <!-- Botão -->
+            <div class="col-12">
+                <button type="submit" name="btnGravar" id="btnGravar" class="btn btn-success">
+                    <?= $produto ? 'Salvar Alterações' : 'Cadastrar' ?>
+                </button>
+            </div>
+        </form>
     </main>
 
     <!-- Rodapé -->
@@ -117,16 +94,16 @@ if (isset($_POST['idProduto']) && !empty($_POST['idProduto'])) {
         // Captura o alerta de erro
         const alertaErro = document.getElementById("alertaErro");
 
-         const preco = document.getElementById("preco");
+        const preco = document.getElementById("preco");
         preco.addEventListener("input", function () {
             if (this.value.includes(",")) {
-            this.value = this.value.replace(",", "."); // troca vírgula por ponto
+                this.value = this.value.replace(",", "."); // troca vírgula por ponto
             }
             // força 2 casas decimais ao sair do campo
             this.addEventListener("blur", function () {
-            if(this.value) {
-                this.value = parseFloat(this.value).toFixed(2);
-            }
+                if (this.value) {
+                    this.value = parseFloat(this.value).toFixed(2);
+                }
             });
         });
 
@@ -167,4 +144,5 @@ if (isset($_POST['idProduto']) && !empty($_POST['idProduto'])) {
     </script>
 
 </body>
+
 </html>
