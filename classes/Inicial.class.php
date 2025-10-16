@@ -1,6 +1,6 @@
 <?php
 class Inicial extends CRUD {
-    protected $id_inicial = "cadastroProduto";
+    protected $id_inicial = "cadastroInicial";
      private $titulo;
     private $subtitulo;
     private $info;
