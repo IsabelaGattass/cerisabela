@@ -46,12 +46,18 @@ session_start();  // Inicia a sessão PHP, permitindo armazenar e recuperar dado
             <!-- Menu de navegação com links para as seções -->
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('Produtos')">Produtos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('sobre')">Sobre</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('servicos')">Atividades</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('estrutura')">Nossa Estrutura</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('contato')">Contato</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('localizacao')">Localização</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicos">Atividades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#estrutura">Nossa Estrutura</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                    </li>
                 </ul>
             </div>
         </div>
