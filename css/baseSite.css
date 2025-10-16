@@ -1,7 +1,7 @@
 @import url('base.css');
 
 header {
-    display: flex;
+    display: center;
     justify-content: space-around;
     background-color: var(--cor-fundo-claro);
     color: var(--cor-font-escura);
@@ -23,7 +23,7 @@ header img {
 
 
 .nav-custom {
-    background-color: rgb(120, 205, 255);
+    background-color: #89daff;
 }
 
 .navbar-nav {
@@ -46,7 +46,7 @@ header img {
 main{
     width: 90%;
     max-width: 1200px;
-    margin: 10px auto;
+    margin: 200px auto;
     padding: 20px;
     background-color: var(--cor-fundo-claro);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
