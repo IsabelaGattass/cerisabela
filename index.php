@@ -25,7 +25,7 @@ ini_set('display_errors', 1);
     <title>Cerisabela - Esmaltes</title>
 </head>
 
-<body style="background-color:#111b53;"> <!-- Define o fundo da página com a cor #bde3eeff -->
+<body style="background-color:#edf1f5ff;"> <!-- Define o fundo da página com a cor #edf1f5ff -->
     <!-- Cabeçalho da página -->
     <header>
         <img src="images/logo.png" alt="Logo da Empresa"> <!-- Logo da empresa -->
@@ -36,7 +36,7 @@ ini_set('display_errors', 1);
     </header>
 
     <!-- Menu de navegação da página -->
-    <nav class="navbar navbar-expand-lg nav-custom">
+    <nav class="navbar navbar-expand-lg nav-custom" style="background-color: #bfe5f7ff">
         <div class="container-fluid">
             <!-- Botão para abrir o menu em telas pequenas -->
             <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
@@ -91,7 +91,7 @@ ini_set('display_errors', 1);
     </main>
 
     <!-- Rodapé da página -->
-    <footer>
+    <footer style="background-color: #bfe5f7ff">
         <?php require_once "_parts/_footer.php" ?> <!-- Inclui o conteúdo do rodapé -->
     </footer>
 
