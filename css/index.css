@@ -9,7 +9,7 @@
     background-size: cover;
     font-size: 24px;
     font-weight: bolder;
-    text-shadow: 1px 1px 0 rgb(2, 0, 128), 2px 2px 4px rgb(72, 49, 156);
+    text-shadow: 1px 1px 0 rgb(224, 224, 235), 2px 2px 4px rgb(236, 234, 241);
 }
 
 section{
@@ -31,7 +31,8 @@ section h2{
 section .texto{
     display: flex;
     gap: 20px;
-    align-items: center;
+    align-items: center;   
+    font-size: 40px;
 }
 
 section .texto img{
@@ -53,4 +54,14 @@ section .texto img{
     section .texto img{
         width: 50%;
     }
+
+section div p {
+    font-size: 30px; 
+    line-height: 1.8; 
+    color: #333; 
+    max-width: 700px; 
+    margin: 0 auto; 
+    text-align: justify;
+}
+
 }

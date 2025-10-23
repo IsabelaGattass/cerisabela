@@ -1,5 +1,7 @@
 <?php
 session_start();  // Inicia a sessão PHP, permitindo armazenar e recuperar dados durante a navegação.
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR"> <!-- Define que o conteúdo da página está em português (Brasil) -->
@@ -47,7 +49,7 @@ session_start();  // Inicia a sessão PHP, permitindo armazenar e recuperar dado
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('Produtos')">Produtos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('sobre')">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('Sobre')">Sobre</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('servicos')">Atividades</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('estrutura')">Nossa Estrutura</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('contato')">Contato</a></li>
@@ -63,7 +65,7 @@ session_start();  // Inicia a sessão PHP, permitindo armazenar e recuperar dado
         </div>
 
         <!-- Seções que são carregadas dinamicamente -->
-        <section id="sobre">
+        <section id="Sobre" style="display:none;">
             <?php require_once('page/Sobre.php'); ?> <!-- Inclui o conteúdo da página "Sobre" -->
         </section>
 
@@ -99,6 +101,7 @@ session_start();  // Inicia a sessão PHP, permitindo armazenar e recuperar dado
     <script>
         // Função para mostrar a seção correspondente ao link clicado
         function mostrarSecao(secaoId) {
+              console.log("Mostrando seção:", secaoId); // 👈 adiciona essa linha
             document.querySelectorAll("main section").forEach(secao => {
                 secao.style.display = (secao.id === secaoId) ? "block" : "none"; // Exibe a seção correta e esconde as outras
             });
