@@ -8,15 +8,15 @@ ini_set('display_errors', 1);
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-  
+
   <!-- CSS personalizado -->
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/baseSite.css">
   <link rel="stylesheet" href="css/index.css">
-  
+
   <link rel="shortcut icon" href="images/banner.png" type="image/x-icon">
   <title>Cerisabela - Esmaltes</title>
 </head>
@@ -57,12 +57,14 @@ ini_set('display_errors', 1);
 
 <main>
   <!-- ================= CARROSSEL ================= -->
-  <div id="carouselExampleAutoplaying" class="carousel slide mb-4" data-bs-ride="carousel" data-bs-interval="2000">
+  <div id="carouselExampleAutoplaying" class="carousel slide mb-4" data-bs-ride="true" data-bs-interval="2500">
     
     <!-- Indicadores -->
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active" aria-current="true"></button>
       <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2"></button>
+      <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="3"></button>
     </div>
 
     <!-- Slides -->
@@ -75,6 +77,9 @@ ini_set('display_errors', 1);
       </div>
       <div class="carousel-item">
         <img src="images/carrossel/carr3.png" class="d-block w-100" alt="Slide 3">
+      </div>
+      <div class="carousel-item">
+        <img src="images/carrossel/carr4.png" class="d-block w-100" alt="Slide 4">
       </div>
     </div>
 
@@ -115,7 +120,7 @@ ini_set('display_errors', 1);
   <?php require_once "_parts/_footer.php" ?>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<!-- ================= SCRIPTS ================= -->
 <script>
   // Mostrar seções
   function mostrarSecao(secaoId) {
@@ -138,7 +143,7 @@ ini_set('display_errors', 1);
     }
   });
 
-  // Preloader com pelo menos 3 segundos
+  // Preloader com atraso de 2s
   document.addEventListener("readystatechange", () => {
     if (document.readyState === "complete") {
       const preloader = document.getElementById("preloader");
@@ -149,6 +154,8 @@ ini_set('display_errors', 1);
     }
   });
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

@@ -38,6 +38,7 @@ section .texto img {
     width: 40%;
 }
 
+/* Responsividade */
 @media screen and (max-width: 600px) {
     main {
         width: 100%;
@@ -65,6 +66,10 @@ section .texto img {
 }
 
 /* ================== CARROSSEL ================== */
+.carousel {
+    position: relative;
+}
+
 .carousel-inner img {
     height: 400px;       /* altura do carrossel */
     object-fit: cover;   /* preenche sem distorcer */
@@ -77,6 +82,10 @@ section .texto img {
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     filter: invert(1); /* controles brancos */
+}
+
+.carousel-item {
+    transition: transform 0.6s ease-in-out;
 }
 
 /* ================== PRELOADER ================== */
@@ -108,5 +117,3 @@ section .texto img {
     opacity: 0;
     transition: opacity 0.6s ease;
 }
-
-
