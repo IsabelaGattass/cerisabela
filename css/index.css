@@ -1,4 +1,4 @@
-.dest{
+.dest {
     height: 300px;
     display: flex;
     justify-content: center;
@@ -12,15 +12,14 @@
     text-shadow: 1px 1px 0 rgb(224, 224, 235), 2px 2px 4px rgb(236, 234, 241);
 }
 
-section{
+section {
     margin: 20px 0;
     padding: 20px;
     border-radius: 2px;
-    background: linear-gradient(to right,  rgb(212, 239, 252));
-    /* background: linear-gradient(to right, rgb(172, 153, 204), #725adb, #ddd);  */
+    background: linear-gradient(to right, rgb(212, 239, 252));
 }
 
-section h2{
+section h2 {
     text-align: flex;
     font-family: var(--font-secundaria);
     margin: 20px;
@@ -28,40 +27,86 @@ section h2{
     padding: 10px;
 }
 
-section .texto{
+section .texto {
     display: flex;
     gap: 20px;
-    align-items: center;   
+    align-items: center;
     font-size: 40px;
 }
 
-section .texto img{
+section .texto img {
     width: 40%;
 }
 
-@media screen and(max-width: 600px) {
-    main{
+@media screen and (max-width: 600px) {
+    main {
         width: 100%;
     }
-    section .texto{
+    section .texto {
         flex-direction: column;
     }
-    .dest{
+    .dest {
         text-align: center;
         padding: 15px;
         height: auto;
     }
-    section .texto img{
+    section .texto img {
         width: 50%;
     }
 
-section div p {
-    font-size: 30px; 
-    line-height: 1.8; 
-    color: #333; 
-    max-width: 700px; 
-    margin: 0 auto; 
-    text-align: justify;
+    section div p {
+        font-size: 30px;
+        line-height: 1.8;
+        color: #333;
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: justify;
+    }
 }
 
+/* ================== CARROSSEL ================== */
+.carousel-inner img {
+    height: 400px;       /* altura do carrossel */
+    object-fit: cover;   /* preenche sem distorcer */
 }
+
+.carousel-indicators button {
+    background-color: #333; /* pontinhos */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1); /* controles brancos */
+}
+
+/* ================== PRELOADER ================== */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preloader-logo {
+    width: 100px;
+    height: auto;
+    animation: girar 1.5s linear infinite; /* adiciona giro */
+}
+
+@keyframes girar {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+

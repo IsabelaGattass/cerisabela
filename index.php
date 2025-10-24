@@ -1,130 +1,151 @@
-<?php
-session_start();  // Inicia a sessão PHP, permitindo armazenar e recuperar dados durante a navegação.
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+<?php 
+session_start(); 
+error_reporting(E_ALL); 
+ini_set('display_errors', 1); 
 ?>
 <!DOCTYPE html>
-<html lang="pt-BR"> <!-- Define que o conteúdo da página está em português (Brasil) -->
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8"> <!-- Define o conjunto de caracteres como UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade: ajusta a escala para dispositivos móveis -->
-    
-    <!-- Importação do Bootstrap para estilização rápida e responsiva -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Links para arquivos de estilos personalizados -->
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/baseSite.css">
-    <link rel="stylesheet" href="css/index.css">
-    
-    <!-- Favicon da página (ícone que aparece na aba do navegador) -->
-    <link rel="shortcut icon" href="images/banner.png" type="image/x-icon">
-    
-    <!-- Título da página (aparece na aba do navegador) -->
-    <title>Cerisabela - Esmaltes</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- CSS personalizado -->
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/baseSite.css">
+  <link rel="stylesheet" href="css/index.css">
+  
+  <link rel="shortcut icon" href="images/banner.png" type="image/x-icon">
+  <title>Cerisabela - Esmaltes</title>
 </head>
+<body style="background-color:#edf1f5ff;">
 
-<body style="background-color:#edf1f5ff;"> <!-- Define o fundo da página com a cor #edf1f5ff -->
-    <!-- Cabeçalho da página -->
-    <header>
-        <img src="images/logo.png" alt="Logo da Empresa"> <!-- Logo da empresa -->
-        <div class="empresa"> <!-- Informações sobre a empresa -->
-            <h1>CERISABELA</h1>
-            <p>Especializada em Unhas</p>
-        </div>
-    </header>
+<!-- ===================== PRELOADER ===================== -->
+<div id="preloader">
+  <img src="images/esmalte-azul.png" alt="Carregando..." class="preloader-logo">
+</div>
+<!-- ===================================================== -->
 
-    <!-- Menu de navegação da página -->
-    <nav class="navbar navbar-expand-lg nav-custom" style="background-color: #bfe5f7ff">
-        <div class="container-fluid">
-            <!-- Botão para abrir o menu em telas pequenas -->
-            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span> <!-- Ícone para o menu em dispositivos pequenos -->
-            </button>
+<header>
+  <img src="images/logo.png" alt="Logo da Empresa">
+  <div class="empresa">
+    <h1>CERISABELA</h1>
+    <p>Especializada em Unhas</p>
+  </div>
+</header>
 
-            <!-- Menu de navegação com links para as seções -->
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('Produtos')">Produtos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('Sobre')">Sobre</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('servicos')">Atividades</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('estrutura')">Nossa Estrutura</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('contato')">Contato</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('localizacao')">Localização</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<nav class="navbar navbar-expand-lg nav-custom" style="background-color: #bfe5f7ff">
+  <div class="container-fluid">
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('Produtos')">Produtos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('Sobre')">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('servicos')">Atividades</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('estrutura')">Nossa Estrutura</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('contato')">Contato</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('localizacao')">Localização</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <!-- ================= CARROSSEL ================= -->
+  <div id="carouselExampleAutoplaying" class="carousel slide mb-4" data-bs-ride="carousel" data-bs-interval="3000">
     
-    <main> <!-- Conteúdo principal da página -->
-        <div class="dest">
-            
-        </div>
+    <!-- Indicadores -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active" aria-current="true"></button>
+      <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1"></button>
+    </div>
 
-        <!-- Seções que são carregadas dinamicamente -->
-        <section id="Sobre" style="display:none;">
-            <?php require_once('page/Sobre.php'); ?> <!-- Inclui o conteúdo da página "Sobre" -->
-        </section>
+    <!-- Slides -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/carrossel/carr1.png" class="d-block w-100" alt="Slide 1">
+      </div>
+      <div class="carousel-item">
+        <img src="images/carrossel/carr2.png" class="d-block w-100" alt="Slide 2">
+      </div>
+    </div>
 
-        <section id="servicos" style="display:none;">
-            <?php require_once('page/Servicos.php'); ?> <!-- Inclui o conteúdo da página "Servicos", inicialmente escondido -->
-        </section>
+    <!-- Controles -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Próximo</span>
+    </button>
+  </div>
+  <!-- ============================================ -->
 
-        <section id="estrutura" style="display:none;">
-            <?php require_once('page/Estrutura.php'); ?> <!-- Inclui o conteúdo da página "Estrutura", inicialmente escondido -->
-        </section>
+  <!-- Seções -->
+  <section id="Sobre" style="display:none;">
+    <?php require_once('page/Sobre.php'); ?>
+  </section>
+  <section id="servicos" style="display:none;">
+    <?php require_once('page/Servicos.php'); ?>
+  </section>
+  <section id="estrutura" style="display:none;">
+    <?php require_once('page/Estrutura.php'); ?>
+  </section>
+  <section id="contato" style="display:none;">
+    <?php require_once('page/Contato.php'); ?>
+  </section>
+  <section id="Produtos" style="display:none;">
+    <?php require_once('page/Produtos.php'); ?>
+  </section>
+  <section id="localizacao" style="display:none;">
+    <?php require_once('page/Localizacao.php'); ?>
+  </section>
+</main>
 
-        <section id="contato" style="display:none;">
-            <?php require_once('page/Contato.php'); ?> <!-- Inclui o conteúdo da página "Contato", inicialmente escondido -->
-        </section>
+<footer style="background-color: #bfe5f7ff">
+  <?php require_once "_parts/_footer.php" ?>
+</footer>
 
-        <section id="Produtos" style="display:none;">
-            <?php require_once('page/Produtos.php'); ?> <!-- Inclui o conteúdo da página "Produtos", inicialmente escondido -->
-        </section>
-        <section id="localizacao" style="display:none;">
-            <?php require_once('page/Localizacao.php'); ?> <!-- Inclui o conteúdo da página "Produtos", inicialmente escondido -->
-        </section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Mostrar seções
+  function mostrarSecao(secaoId) {
+    document.querySelectorAll("main section").forEach(secao => {
+      secao.style.display = (secao.id === secaoId) ? "block" : "none";
+    });
+  }
 
-    </main>
-
-    <!-- Rodapé da página -->
-    <footer style="background-color: #bfe5f7ff">
-        <?php require_once "_parts/_footer.php" ?> <!-- Inclui o conteúdo do rodapé -->
-    </footer>
-
-    <!-- Importação do script do Bootstrap para funcionalidades como o menu de navegação -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        // Função para mostrar a seção correspondente ao link clicado
-        function mostrarSecao(secaoId) {
-              console.log("Mostrando seção:", secaoId); // 👈 adiciona essa linha
-            document.querySelectorAll("main section").forEach(secao => {
-                secao.style.display = (secao.id === secaoId) ? "block" : "none"; // Exibe a seção correta e esconde as outras
-            });
-        }
-
-        // Quando o conteúdo da página estiver carregado
-        window.addEventListener('DOMContentLoaded', () => {
-            const hash = window.location.hash; // Verifica se há um hash na URL
-            if (hash) {
-                const el = document.querySelector(hash); // Busca o elemento correspondente ao hash
-                if (el) {
-                    // Mostra a seção correspondente ao hash na URL
-                    document.querySelectorAll("main section").forEach(secao => {
-                        secao.style.display = (secao.id === hash.substring(1)) ? "block" : "none"; // Exibe a seção correta e esconde as outras
-                    });
-                    // Realiza o scroll suave até a seção
-                    el.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            }
+  // Mostrar seção baseada no hash da URL
+  window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash;
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        document.querySelectorAll("main section").forEach(secao => {
+          secao.style.display = (secao.id === hash.substring(1)) ? "block" : "none";
         });
-    </script>
-</body>
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  });
 
+  // Preloader com pelo menos 3 segundos
+  document.addEventListener("readystatechange", () => {
+    if (document.readyState === "complete") {
+      const preloader = document.getElementById("preloader");
+      setTimeout(() => {
+        preloader.classList.add("fade-out");
+        setTimeout(() => preloader.remove(), 600);
+      }, 2000);
+    }
+  });
+</script>
+
+</body>
 </html>
