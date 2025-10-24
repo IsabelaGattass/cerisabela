@@ -95,11 +95,12 @@ ini_set('display_errors', 1);
   <!-- Início -->
   <section id="inicio" style="display:block; text-align:center; padding:40px 20px;">
     <h2 class="fw-bold text-primary mb-3">Seja bem-vindo ao site Cerisabela</h2>
-    <p class="lead mb-4">Aqui você encontra os esmaltes mais lindos, com brilho, cor e qualidade pra deixar suas unhas impecáveis! Explore nossas cores e descubra seu estilo.</p>
+    <p class="lead mb-4">Aqui você encontra os esmaltes mais lindos, com brilho, cor e qualidade pra deixar suas unhas impecáveis! 
+        Explore nossas cores e descubra seu estilo.</p>
     <img src="images/esmalte-azul.png" alt="Esmalte Azul" class="img-fluid mt-2 mb-4" style="max-width: 300px;">
     <br>
     <button class="btn btn-primary btn-lg px-4" onclick="mostrarSecao('Produtos')">
-      Ver Produtos <i class="bi bi-arrow-right-circle ms-2"></i>
+      Veja nossos produtos <i class="bi bi-arrow-right-circle ms-2"></i>
     </button>
   </section>
 
