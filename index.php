@@ -8,15 +8,15 @@ ini_set('display_errors', 1);
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-
+  
   <!-- CSS personalizado -->
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/baseSite.css">
   <link rel="stylesheet" href="css/index.css">
-
+  
   <link rel="shortcut icon" href="images/banner.png" type="image/x-icon">
   <title>Cerisabela - Esmaltes</title>
 </head>
@@ -44,6 +44,7 @@ ini_set('display_errors', 1);
     </button>
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
       <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('inicio')">Início</a></li>
         <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('Produtos')">Produtos</a></li>
         <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('Sobre')">Sobre</a></li>
         <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarSecao('servicos')">Atividades</a></li>
@@ -55,47 +56,54 @@ ini_set('display_errors', 1);
   </div>
 </nav>
 
-<main>
-  <!-- ================= CARROSSEL ================= -->
-  <div id="carouselExampleAutoplaying" class="carousel slide mb-4" data-bs-ride="true" data-bs-interval="2500">
-    
-    <!-- Indicadores -->
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active" aria-current="true"></button>
-      <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1"></button>
-      <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2"></button>
-      <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="3"></button>
-    </div>
-
-    <!-- Slides -->
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="images/carrossel/carr1.png" class="d-block w-100" alt="Slide 1">
-      </div>
-      <div class="carousel-item">
-        <img src="images/carrossel/carr2.png" class="d-block w-100" alt="Slide 2">
-      </div>
-      <div class="carousel-item">
-        <img src="images/carrossel/carr3.png" class="d-block w-100" alt="Slide 3">
-      </div>
-      <div class="carousel-item">
-        <img src="images/carrossel/carr4.png" class="d-block w-100" alt="Slide 4">
-      </div>
-    </div>
-
-    <!-- Controles -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Anterior</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Próximo</span>
-    </button>
+<!-- ===================== CARROSSEL (EM TODAS AS PÁGINAS) ===================== -->
+<div id="carouselExampleAutoplaying" class="carousel slide mb-4" data-bs-ride="carousel" data-bs-interval="2500">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active" aria-current="true"></button>
+    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2"></button>
+    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="3"></button>
   </div>
-  <!-- ============================================ -->
 
-  <!-- Seções -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/carrossel/carr1.png" class="d-block w-100" alt="Slide 1">
+    </div>
+    <div class="carousel-item">
+      <img src="images/carrossel/carr2.png" class="d-block w-100" alt="Slide 2">
+    </div>
+    <div class="carousel-item">
+      <img src="images/carrossel/carr3.png" class="d-block w-100" alt="Slide 3">
+    </div>
+    <div class="carousel-item">
+      <img src="images/carrossel/carr4.png" class="d-block w-100" alt="Slide 4">
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Próximo</span>
+  </button>
+</div>
+
+<!-- ===================== CONTEÚDO ===================== -->
+<main>
+  <!-- Início -->
+  <section id="inicio" style="display:block; text-align:center; padding:40px 20px;">
+    <h2 class="fw-bold text-primary mb-3">Seja bem-vindo ao site Cerisabela</h2>
+    <p class="lead mb-4">Aqui você encontra os esmaltes mais lindos, com brilho, cor e qualidade pra deixar suas unhas impecáveis! Explore nossas cores e descubra seu estilo.</p>
+    <img src="images/esmalte-azul.png" alt="Esmalte Azul" class="img-fluid mt-2 mb-4" style="max-width: 300px;">
+    <br>
+    <button class="btn btn-primary btn-lg px-4" onclick="mostrarSecao('Produtos')">
+      Ver Produtos <i class="bi bi-arrow-right-circle ms-2"></i>
+    </button>
+  </section>
+
+  <!-- Outras seções -->
   <section id="Sobre" style="display:none;">
     <?php require_once('page/Sobre.php'); ?>
   </section>
@@ -116,34 +124,21 @@ ini_set('display_errors', 1);
   </section>
 </main>
 
+<!-- ===================== FOOTER ===================== -->
 <footer style="background-color: #bfe5f7ff">
   <?php require_once "_parts/_footer.php" ?>
 </footer>
 
-<!-- ================= SCRIPTS ================= -->
+<!-- ===================== SCRIPTS ===================== -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  // Mostrar seções
   function mostrarSecao(secaoId) {
     document.querySelectorAll("main section").forEach(secao => {
       secao.style.display = (secao.id === secaoId) ? "block" : "none";
     });
   }
 
-  // Mostrar seção baseada no hash da URL
-  window.addEventListener('DOMContentLoaded', () => {
-    const hash = window.location.hash;
-    if (hash) {
-      const el = document.querySelector(hash);
-      if (el) {
-        document.querySelectorAll("main section").forEach(secao => {
-          secao.style.display = (secao.id === hash.substring(1)) ? "block" : "none";
-        });
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  });
-
-  // Preloader com atraso de 2s
+  // Preloader
   document.addEventListener("readystatechange", () => {
     if (document.readyState === "complete") {
       const preloader = document.getElementById("preloader");
@@ -154,8 +149,6 @@ ini_set('display_errors', 1);
     }
   });
 </script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
