@@ -57,7 +57,7 @@ ini_set('display_errors', 1);
 
 <main>
   <!-- ================= CARROSSEL ================= -->
-  <div id="carouselExampleAutoplaying" class="carousel slide mb-4" data-bs-ride="carousel" data-bs-interval="3000">
+  <div id="carouselExampleAutoplaying" class="carousel slide mb-4" data-bs-ride="carousel" data-bs-interval="2000">
     
     <!-- Indicadores -->
     <div class="carousel-indicators">
@@ -72,6 +72,9 @@ ini_set('display_errors', 1);
       </div>
       <div class="carousel-item">
         <img src="images/carrossel/carr2.png" class="d-block w-100" alt="Slide 2">
+      </div>
+      <div class="carousel-item">
+        <img src="images/carrossel/carr3.png" class="d-block w-100" alt="Slide 3">
       </div>
     </div>
 
