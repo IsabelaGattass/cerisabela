@@ -24,7 +24,7 @@
         $$idInicial = null;
         if(filter_has_var(INPUT_POST, "btnEditar")):
             
-            $i = new ImgInicial(); 
+            $i = new FotoProduto(); 
             $idImg = intval(filter_input(INPUT_POST, "idImg"));
             $imagem = $i->search('id_foto', $idImg);
 
