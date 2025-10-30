@@ -1,13 +1,14 @@
-<h2>Contato</h2>
+<p style="margin-left: 430px; font-size:50px;">CONTATO</p>
+<h2></h2>
 <div class="texto">
-    <img src="./images/ctt_preto.png" alt="Contato da empresa">
+    
     <div>
-        <p>Email: contato@cerisabela.com</p>
-        <p>Telefone: (99) 99999-9999</p>
-        <p>WhatsApp: (99) 99999-9999</p>
-        <p>Endereço: Rua Fictícia, 123, Bairro, Cidade, Estado</p>
-        <p>Redes sociais:
-            <a href="https://facebook.com/cerisabela" target="_blank">Facebook</a> |
+        <p style="font-size: 25px">Email: contato@cerisabela.com</p>
+         <p style="font-size: 25px">Telefone: (99) 99999-9999</p>
+         <p style="font-size: 25px">WhatsApp: (99) 99999-9999</p>
+         <p style="font-size: 25px">Endereço: Rua Fictícia, 123, Bairro, Cidade, Estado</p>
+         <p style="font-size: 25px">Redes sociais:
+            <a href="https://facebook.com/cerisabela" target="_blank">Facebook</a> 
             <a href="https://instagram.com/cerisabela" target="_blank">Instagram</a>
         </p>
         <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#formModal">
