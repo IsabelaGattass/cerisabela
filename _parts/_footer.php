@@ -1,4 +1,4 @@
-<footer style="background-color: #bfe5f7ff">
+<footer style="background-color:rgb(184, 227, 247)">
 </footer>
 <div class="r-linha">
     <div class= "r-linha-item">
