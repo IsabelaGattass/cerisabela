@@ -8,7 +8,7 @@ class FotoProduto extends CRUD {
     private $texto;
     private $dataUpload;
 
-    // Getters e Setters
+   
     public function getIdFoto() {
         return $this->idFoto;
     }
@@ -59,10 +59,10 @@ class FotoProduto extends CRUD {
     }
 
     public function add() {
-            $sql = "INSERT INTO ft_produto (fk_animal, nome, legenda, texto, data_upload) 
+            $sql = "INSERT INTO ft_produto (fk_produto, nome, legenda, texto, dataUpload) 
                     VALUES (prouto, :nome, :legenda, :texto, :dataUpload)";
             $stmt = $this->db->prepare($sql);
-            $stmt->bindValue("prouto", $this->produto);
+            $stmt->bindValue("produto", $this->produto);
             $stmt->bindValue(":nome", $this->nome);
             $stmt->bindValue(":legenda", $this->legenda);
             $stmt->bindValue(":texto", $this->texto);
@@ -72,15 +72,23 @@ class FotoProduto extends CRUD {
         }
     public function update(string $campo, int $id){
         $sql = "UPDATE ft_produto 
-                    SET fk_animal = prouto, nome = :nome, legenda = :legenda, texto = :texto 
+                    SET fk_produto = produto, nome = :nome, legenda = :legenda, texto = :texto 
                     WHERE id_foto = :idFoto";
             $stmt = $this->db->prepare($sql);
-            $stmt->bindValue(":prouto", $this->produto);
+            $stmt->bindValue(":produto", $this->produto);
             $stmt->bindValue(":nome", $this->nome);
             $stmt->bindValue(":legenda", $this->legenda);
             $stmt->bindValue(":texto", $this->texto);
             $stmt->bindValue(":idFoto", $id);
             return $stmt->execute();
+    }
+
+        public function fotosProduto(int $idProduto) {
+        $sql = "SELECT * FROM $this->table where fk_produto = :fk_produto";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':fk_produto',$idProduto);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
 }
