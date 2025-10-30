@@ -35,8 +35,7 @@ ini_set('display_errors', 1);
     <p>Especializada em Unhas</p>
   </div>
 </header>
-
-<nav class="navbar navbar-expand-lg nav-custom" style="background-color: #bfe5f7ff">
+<nav class="navbar navbar-expand-lg nav-custom" style="background-color:rgb(185, 227, 247)">
   <div class="container-fluid">
     <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
