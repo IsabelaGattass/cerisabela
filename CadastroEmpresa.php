@@ -20,16 +20,8 @@
         ?>
 
 
-<body class="bg-blue">
-    <header class="bg-primary text-white py-3 mb -4">
-        <div class="container text-center">
- <figure class="text-center">
-  <blockquote class="display-6">
-    <p>Cadastro da Empresa</p>
-  </blockquote>
-</figure>
-        </div>
-    </header>
+<body>
+           <?php require_once "_parts/_menu.php"; ?>
     
 <main class = "container">
     <form action="dbEmpresa.php" method="post" class="row g3 mt-3">

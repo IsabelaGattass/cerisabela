@@ -27,8 +27,16 @@
                 <thead class="table-primary">
                     <tr>
                         <th>#</th>
-                        <th>Empresas</th>
-                        <th>Ações</th>
+                        <th>Empresa</th>
+                        <th>CNPJ</th>
+                        <th>Nome Fantasia</th>
+                        <th>Telefone</th>
+                        <th>Email</th>
+                        <th>Responsáveis</th>
+                        <th>Atividade Econômica</th>
+                        <th>Rede Social</th>
+                        <th>Apresentação</th>
+                        <th>Histórico</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,9 +50,19 @@
                         ?>
                         <tr>
                             <td><?php echo $empresa->id_empresa; ?></td>
-                            <td class="text-start"><?php echo $empresa->nome; ?></td>
+                            <td class="text-center"><?php echo $empresa->nome; ?></td>
+                            <td><?php echo $empresa->cnpj; ?></td>
+                            <td><?php echo $empresa->nome_fant; ?> </td>
+                            <td><?php echo $empresa->telefone; ?></td>
+                            <td><?php echo $empresa->email; ?></td>
+                            <td><?php echo $empresa->responsaveis; ?></td>
+                            <td><?php echo $empresa->atv_economica; ?></td>
+                            <td><?php echo $empresa->rede_social; ?></td>
+                            <td><?php echo $empresa->apresentacao; ?></td>
+                            <td><?php echo $empresa->historico; ?></td>
                             <td class="d-flex justify-content-center gap-1">
 
+                                <!-- Botão Editar -->
                                 <form action="<?php echo htmlspecialchars("CadastroEmpresa.php") ?>" method="post"
                                     class="d-flex">
                                     <input type="hidden" name="id_empresa" value="<?php echo $empresa->id_empresa ?>">
@@ -54,6 +72,7 @@
                                     </button>
                                 </form>
 
+                                <!-- Botão Excluir -->
                                 <form action="<?php echo htmlspecialchars("DbEmpresa.php") ?>" method="post" class="d-flex">
                                     <input type="hidden" name="id_empresa"
                                         value="<?php echo $empresa->id_empresa ?>"><button name="btnDeletar"
@@ -68,6 +87,10 @@
                 </tbody>
             </table>
     </main>
+
+        <footer>
+        <?php require_once("_parts/_footer.php"); ?>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </body>

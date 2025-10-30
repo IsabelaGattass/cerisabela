@@ -6,39 +6,29 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="CSS/baseAdmin.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+        <link rel="stylesheet" href="CSS/baseSite.css">
         <title>Tela de Login</title>
 
     </head>
 
-    <!-- Layout da Tela de Login -->
-
-<body class="bg-blue">
-    <header class="bg-info.bg-gradient text-black py-3 mb -4">
-        <div clas="container text-center">
-            <figure class="text-center">
-                <blockquote class="display-6">
-                    <p>Tela de Login</p>
-                </blockquote>
-            </figure>
-        </div>
-        <header>
-
-        </header>
-
+<body>
+        <?php require_once "_parts/_menu.php"; ?>
+        <div class="flex-grow-1 d-flex justify-content-center align-items-center">
         <main class="container">
+
             <form action="Validacao.php" method="POST">
-                <div class="col-md-12">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="text" name="email" id="email" class="form-control">
+                <div class="mb-3 col-12">
+                    <label for="email" class="form-label">Usuário</label>
+                    <i class="bx bxs-user"></i>
+                    <input type="text" class="form-control" id="email" name="email">
                 </div>
 
 
-                <div class="col-md-12">
+                <div class="mb-3">
                     <label for="senha" class="form-label">Senha</label>
-                    <input type="password" name="senha" id="senha" class="form-control">
-                    Sua senha deve ter de 8 a 20 caracteres, conter letras e números e não deve conter espaços,
-                    caracteres especiais ou emojis.
+                    <i class="bx bxs-lock-alt"></i>
+                    <input type="password" class="form-control" id="senha" name="senha">
                 </div>
 
 
@@ -47,19 +37,23 @@
                     <label class="form-check-label" for="exampleCheck1">Confirmar</label>
                 </div>
 
+                <div class="text-center">
+                    <button type="submit" name="btnGravar" class="btn btn-primary">Efetuar Login</button>
+                </div>
 
-                <div class="col-3">
-                    <button type="submit" name="btnGravar" class="btn btn-light">Efetuar Login</button>
                 </div>
 
             </form>
         </main>
 
-</body>
-
-   <footer>
+           <footer>
         <?php require_once "_parts/_footer.php"; ?>
     </footer>
+
+</body>
+
+</html>
+
 
 
 
