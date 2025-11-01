@@ -1,56 +1,96 @@
-.dest{
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url("../images/banner.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    font-size: 24px;
-    font-weight: bolder;
-    text-shadow: 1px 1px 0 rgb(2, 0, 128), 2px 2px 4px rgb(72, 49, 156);
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #edf1f5ff;
+  font-family: 'Poppins', sans-serif;
 }
 
-section{
-    margin: 20px 0;
-    padding: 20px;
-    border-radius: 2px;
-    background: linear-gradient(to right,  rgb(212, 239, 252));
-    /* background: linear-gradient(to right, rgb(172, 153, 204), #725adb, #ddd);  */
+/* ================== SEÇÕES ================== */
+section {
+  padding: 20px;
 }
 
-section h2{
-    text-align: flex;
-    font-family: var(--font-secundaria);
-    margin: 20px;
-    border-bottom: 2px solid black;
-    padding: 10px;
+section h2 {
+  font-family: var(--font-secundaria);
+  margin: 20px;
+  border-bottom: 2px solid black;
+  padding: 10px;
 }
 
-section .texto{
-    display: flex;
-    gap: 20px;
-    align-items: center;
+section .texto {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 40px;
 }
 
-section .texto img{
-    width: 40%;
+section .texto img {
+  width: 40%;
 }
 
-@media screen and(max-width: 600px) {
-    main{
-        width: 100%;
-    }
-    section .texto{
-        flex-direction: column;
-    }
-    .dest{
-        text-align: center;
-        padding: 15px;
-        height: auto;
-    }
-    section .texto img{
-        width: 50%;
-    }
+/* ================== CARROSSEL ================== */
+.carousel-inner img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.carousel-indicators button {
+  background-color: #333;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
+
+/* ================== PRELOADER ================== */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preloader-logo {
+  width: 100px;
+  height: auto;
+  animation: girar 1.5s linear infinite;
+}
+
+@keyframes girar {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+/* ================== BOTÃO ================== */
+.btn-primary {
+  background-color: #5b9be4;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #458ad4;
+  transform: scale(1.05);
+}
+
+/* ================== RESPONSIVO ================== */
+@media screen and (max-width: 600px) {
+  section .texto {
+    flex-direction: column;
+  }
+  section .texto img {
+    width: 80%;
+  }
 }

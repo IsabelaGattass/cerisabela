@@ -10,12 +10,12 @@
 
     <!-- Lado direito: texto -->
     <div class="map-texto">
-      <h2>Nosso Endereço</h2>
-      <p><strong>Local:</strong> IFRO - Campus Cacoal</p>
-      <p><strong>WhatsApp:</strong> (69) 9 9999-9999</p>
-      <p><strong>E-mail:</strong> cerisabela@gmail.com</p>
-      <p><strong>Horário de Funcionamento:</strong></p>
-      <p>Segunda a Sexta-feira, das 9h30 às 18h</p>
+      <p class="titulo-sobre" style="margin-left: 330px; font-size:50px;">NOSSO ENDEREÇO</p>
+      <h2></h2>
+       <p style="font-size: 25px"><strong>WhatsApp:</strong> (69) 9 9999-9999</p>
+       <p style="font-size: 25px"><strong>E-mail:</strong> cerisabela@gmail.com</p>
+       <p style="font-size: 25px"><strong>Horário de Funcionamento:</strong></p>
+       <p style="font-size: 25px">Segunda a Sexta-feira, das 9h30 às 18h</p>
     </div>
   </div>
 </div>
@@ -24,8 +24,8 @@
 <!-- mapa e quadrado de texto -->
 <div class="map-section">
   <div class="map-text">
-    <h2>Encontre a CERISABELA facilmente</h2>
-    <p>Veja no mapa como chegar até nossa empresa de forma rápida e prática.</p>
+    <p class="titulo-sobre" style="margin-left: 250px; font-size:50px;">ENCONTRE A CERISABELA</p>
+    <p style="font-size: 25px">Veja no mapa como chegar até nossa empresa de forma rápida e prática.</p>
     <a href="https://www.google.com/maps/dir/?api=1&destination=Instituto+Federal+de+Rond%C3%B4nia+-+Cacoal"
        target="_blank" class="btn-navegar"></a>
   </div>
