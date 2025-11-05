@@ -20,11 +20,10 @@
     <?php require_once "_parts/_menu.php"; ?>
   </header>
 
-  <!-- não é nosso esse coiso de vitamina (O NOSSO É ESMALTES) -->
-<div class="bloco-fundo-vitaminas largura-total">
+<div class="bloco-fundo-esmaltes largura-total">
     <div class="conteudo-esmaltes">
         <h1 class="titulo-esmaltação">
-            <span class="subtitulo-vitaminas">CERISABELA</span><br>
+            <span class="subtitulo-esmaltes">CERISABELA</span><br>
             ESMALTES E ESMALTAÇÕES
         </h1>
     </div>
