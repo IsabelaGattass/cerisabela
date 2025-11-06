@@ -42,11 +42,10 @@ public function setiIdProduto($idProduto)
 
     public function add()
     {
-        $sql = "INSERT INTO $this->table (nome, descricao, preco, unidade) VALUES (:nome, :descricao, :idFuncionario, :preco, :unidade)";
+        $sql = "INSERT INTO $this->table (nome, descricao, preco, unidade) VALUES (:nome, :descricao, :preco, :unidade)";
          $stmt = $this->db->prepare($sql);
         $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
         $stmt->bindParam(":descricao", $this->descricao, PDO::PARAM_STR);
-        $stmt->bindParam(":idFuncionario", $this->idProduto, PDO::PARAM_STR);
         $stmt->bindParam(":preco", $this->preco, PDO::PARAM_STR);
         $stmt->bindParam(":unidade", $this->unidade, PDO::PARAM_STR);
         return $stmt->execute();

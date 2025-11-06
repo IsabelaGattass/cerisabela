@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Importa ícones do Bootstrap (biblioteca de ícones prontos) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     
     <!-- Importa um CSS próprio chamado baseAdmin.css -->
     <link rel="stylesheet" href="CSS/baseAdmin.css">
@@ -94,7 +94,12 @@
                                         onclick="return confirm('Tem certeza que deseja deletar o produto?');">
                                         <i class="bi bi-trash"></i>
                                     </button>
+
                                 </form>
+                                <a href="fotoProduto.php?idProduto=<?php echo $produto->idProduto; ?>" class="btn btn-success">
+                                <i class="bi bi-camera"></i>
+                            </a>
+
                             </td>
                         </tr>
                     <?php endforeach; ?> <!-- Fecha o loop dos produtos -->

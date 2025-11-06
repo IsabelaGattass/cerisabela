@@ -41,9 +41,14 @@
                     <button type="submit" name="btnGravar" class="btn btn-primary">Efetuar Login</button>
                 </div>
 
+                <a href="CadastroUsuario.php">Não tem conta? Cadastre-se</a>
+
                 </div>
 
+                
+
             </form>
+                        
         </main>
 
            <footer>

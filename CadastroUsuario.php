@@ -16,116 +16,96 @@
     <title>Cadastro Usuário</title>
 </head>
 
-<body class="bg-light"> <!-- Aplica fundo claro -->
-
-    <!-- Cabeçalho da página -->
-    <header class="bg-primary text-white py-3 mb-4">
-        <div class="container text-center">
-            <h1 class="h3">Cadastro de Usuário</h1>
-        </div>
+<body>
+    <header>
+        <?php require_once "_parts/_menu.php"; ?>
     </header>
-
-    <!-- Conteúdo principal -->
     <main class="container">
-        
-        <!-- Alerta oculto que será exibido em caso de erro -->
-        <div id="alertaErro" class="alert alert-danger d-none" role="alert">
-            ⚠️ Preencha todos os campos obrigatórios antes de enviar!
+        <div class="titutlo mt-3">
+            <h3>Gerenciar Usuário</h3>
         </div>
+        <?php
+        spl_autoload_register(function ($class) {
+            require_once "classes/{$class}.class.php";
+        });
 
-        <!-- Formulário de cadastro -->
-        <form id="formCadastro" method="post" action="dbUsuario.php" class="row g-3 mt-3">
-
-            <!-- Campo Nome -->
-            <div class="col-12">
-                <label for="nome" class="form-label">Nome Completo</label>
-                <input type="text" name="nome" id="nome" placeholder="Digite o seu nome:" required class="form-control">
+        if (filter_has_var(INPUT_POST, "btnEditar")) {
+            $edtUsuario = new Usuario;
+            $idUsuario = intval(filter_input(INPUT_POST, "idUsuario"));
+            $usuario = $edtUsuario->search("id_usuario", $idUsuario);
+        }
+        ?>
+        <form method="post" action="dbUsuario.php" class="row g-3 mt-3">
+            <input type="hidden" name="idUsuario" value="<?php echo $usuario->id_usuario ?? null; ?>">
+            <div class="col-md-6">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" name="nome" id="nome" placeholder="Digite o nome do usuário" required
+                    class="form-control" value="<?php echo $usuario->nome ?? null; ?>">
             </div>
+            <div class="col-md-6">
+                <label for="nivel" class="form-label">Nível de acesso</label>
+                <select name="nivel" id="nivel" class="form-select">
+                    <option>Selecione o nível de acesso</option>
+                    <?php
+                    $niveis = [
+                        1 => "Administrador",
+                        2 => "Gerente",
+                        3 => "Funcionário"
+                    ];
 
-            <!-- Campo Email -->
-            <div class="col-12">
-                <label for="email" class="form-label">EMAIL</label>
-                <input type="email" name="email" id="email" placeholder="Digite o seu Email:" required class="form-control">
-            </div>
-            
-            <!-- Campo Telefone-->
-            <div class="col-12">
-                <label for="cpf" class="form-label">CPF</label>
-                <input type="text" name="cpf" id="cpf" placeholder="Digite o seu CPF:" required class="form-control"
-                   pattern="[0-9]+" maxlength="11">
-            </div>
+                    $nivel_selecionado = $usuario->nivel_acesso ?? null;
+                    foreach ($niveis as $valor => $rotulo):
+                        ?>
+                        <option value="<?php echo $valor ?>" <?php if ($nivel_selecionado == $valor)
+                               echo 'selected' ?>>
+                            <?php echo $rotulo; ?>
+                        </option>
+                    <?php endforeach; ?>
 
-            <!-- Campo Telefone -->
-            <div class="col-12">
-                <label for="telefone" class="form-label">TELEFONE</label>
-                <input type="text" name="telefone" id="telefone" placeholder="+XX X XXX XXX-XXXX"   pattern="[0-9]+" maxlength="15" required class="form-control">
-            </div>
-
-            <!-- Campo Senha -->
-            <div class="col-md-12">
-                <label for="senha" class="form-label">SENHA</label>
-                <input type="password" name="senha" id="senha" placeholder="Digite a sua senha:" required class="form-control">
-            </div>
-
-            <!-- Campo Seleção de Papel -->
-            <div class="col-12">
-                <label for="tipoFuncionario" class="form-label">SELECIONE SEU PAPEL</label>
-                <select class="form-select" aria-label="Escolha seu papel:" name="tipoFuncionario" id="tipoFuncionario" required>
-                    <option value="" selected>Selecione seu papel</option>
-                    <option value="1">Administrador</option>
-                    <option value="2">Gerente</option>
-                    <option value="3">Funcionário</option>
-                    <option value="4">Cliente Comum</option>
-                    <option value="5">Supervisor</option>
                 </select>
             </div>
+            <?php if (empty($idUsuario)): ?>
+                <div class="col-md-6">
+                    <label for="senha" class="form-label">Senha</label>
+                    <div class="input-group">
+                        <input type="password" id="senha" class="form-control">
+                        <button type="button" id="toggleSenha" class="btn btn-outline-secondary">
+                            👁️
+                        </button>
+                    </div>
+                    <p id="forcaSenha" class="fw-bold"></p>
+                    <ol id="requisitos" class="mb-3 mt-3">
+                        <li id="minChar" class="invalido">Mínimo 8 caracteres</li>
+                        <li id="maiuscula" class="invalido">Pelo menos uma letra maiúscula</li>
+                        <li id="minuscula" class="invalido">Pelo menos uma letra minúscula</li>
+                        <li id="numero" class="invalido">Pelo menos um número</li>
+                        <li id="especial" class="invalido">Pelo menos um caractere especial (!@#$%^&*...)</li>
+                    </ol>
 
-            <!-- Checkbox de confirmação -->
-            <div class="col-12">
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="checkInfo" required>
-                    <label class="form-check-label" for="checkInfo">Confirme suas informações</label>
                 </div>
-            </div>
-
-            <!-- Botão de envio -->
+                <div class="col-md-6">
+                    <label for="confirma" class="form-label">confirma</label>
+                    <div class="input-group">
+                        <input type="password" id="confirmar" class="form-control">
+                        <button type="button" id="toggleConfirmar" class="btn btn-outline-secondary">
+                            👁️
+                        </button>
+                    </div>
+                    <small id="msgConfirmacao"></small>
+                </div>
+                <div class="col-12">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" name="email" id="email" placeholder="Digite o e-mail" required class="form-control">
+                </div>
+            <?php endif; ?>
             <div class="col-12">
-                <button type="submit" name="btnGravar" id="button" class="btn btn-success">Cadastrar</button>
+                <button type="submit" name="btnGravar" id="btnSalvar" class="btn btn-success" disabled>Gravar</button>
             </div>
         </form>
     </main>
-
-    <!-- Rodapé -->
-    <footer>
-        <?php require_once "_parts/_footer.php"; ?>
-    </footer>
-
-    <!-- Importa o JS do Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Script de Validação -->
-    <script>
-        // Pega o formulário pelo ID
-        const form = document.getElementById('formCadastro');
-
-        // Pega a div do alerta pelo ID
-        const alerta = document.getElementById('alertaErro');
-
-        // Evento quando o usuário tenta enviar o formulário
-        form.addEventListener('submit', function (e) {
-            // Se o formulário não for válido (campos obrigatórios vazios)
-            if (!form.checkValidity()) {
-                e.preventDefault(); // Impede o envio
-                alerta.classList.remove('d-none'); // Mostra o alerta
-                alerta.scrollIntoView({ behavior: 'smooth' }); // Rola a tela até o alerta
-            } else {
-                alerta.classList.add('d-none'); // Esconde o alerta se válido
-            }
-        });
- 
-
- 
-    </script>
-
+    <?php require_once "_parts/_footer.php"; ?>
+    
+    <script src="JS/senha.js"></script>
 </body>
+
 </html>
