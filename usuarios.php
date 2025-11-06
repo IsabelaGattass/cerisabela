@@ -18,7 +18,7 @@
             <h3>Usuários</h3>
         </div>
         <div class="mb-3 mt-3">
-            <a href="gerUsuario.php" class="btn btn-outline-success"><i class="bi bi-plus-circle"></i> Novo Usuário</a>
+            <a href="CadastroUsuario.php" class="btn btn-outline-success"><i class="bi bi-plus-circle"></i> Novo Usuário</a>
         </div>
         <table class="table">
             <thead>

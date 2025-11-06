@@ -102,8 +102,14 @@
                 <button type="submit" name="btnGravar" id="btnSalvar" class="btn btn-success" disabled>Gravar</button>
             </div>
         </form>
+            
+
+
     </main>
-    <?php require_once "_parts/_footer.php"; ?>
+               <footer>
+        <?php require_once "_parts/_footer.php"; ?>
+    </footer>
+
     
     <script src="JS/senha.js"></script>
 </body>
