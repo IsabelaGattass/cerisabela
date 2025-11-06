@@ -12,7 +12,7 @@ class Empresa extends CRUD {
     private $responsaveis;
     private $atv_economica;
     private $rede_social;
-    private $apresentação;
+    private $apresentacao;
     private $historico;
 
     public function getId()
@@ -127,12 +127,12 @@ class Empresa extends CRUD {
 
     public function getApresentacao()
     {
-        return $this->apresentação;
+        return $this->apresentacao;
     }
 
-    public function setApresentacao($apresentação)
+    public function setApresentacao($apresentacao)
     {
-        $this->apresentação = $apresentação;
+        $this->apresentacao = $apresentacao;
 
     }
 
@@ -164,7 +164,7 @@ class Empresa extends CRUD {
         $stmt->bindParam(":responsaveis", $this->responsaveis, );
         $stmt->bindParam(":atv_economica", $this->atv_economica, );
         $stmt->bindParam(":rede_social", $this->rede_social, );
-        $stmt->bindParam(":apresentacao", $this->apresentação, );
+        $stmt->bindParam(":apresentacao", $this->apresentacao, );
         $stmt->bindParam(":historico", $this->historico, );
 
         return $stmt->execute();
@@ -172,7 +172,7 @@ class Empresa extends CRUD {
 
     public function update(string $campo, int $id)
     {
-        $sql = "UPDATE $this->table SET nome= :nome, cnpj= :cnpj, nome_fant= :nome_fant, telefone= :telefone, email= :email, responsaveis= :responsaveis, atv_economica= :atv_economica, rede_social= :rede_social, apresentação= :apresentação, historico= :historico WHERE $campo= :id_empresa";
+        $sql = "UPDATE $this->table SET nome= :nome, cnpj= :cnpj, nome_fant= :nome_fant, telefone= :telefone, email= :email, responsaveis= :responsaveis, atv_economica= :atv_economica, rede_social= :rede_social, apresentacao= :apresentacao, historico= :historico WHERE $campo= :id_empresa";
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam("nome", $this->nome, PDO::PARAM_STR);
         $stmt->bindParam("id", $this->id_empresa, PDO::PARAM_INT);
@@ -183,7 +183,7 @@ class Empresa extends CRUD {
         $stmt->bindParam("responsaveis", $this->responsaveis, PDO::PARAM_STR);
         $stmt->bindParam("atv_economica", $this->atv_economica, PDO::PARAM_STR);
         $stmt->bindParam("rede_social", $this->rede_social, PDO::PARAM_STR);
-        $stmt->bindParam("apresentação", $this->apresentação, PDO::PARAM_STR);
+        $stmt->bindParam("apresentacao", $this->apresentacao, PDO::PARAM_STR);
         $stmt->bindParam("historico", $this->historico, PDO::PARAM_STR);
     
         return $stmt->execute();
