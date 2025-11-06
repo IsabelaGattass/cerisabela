@@ -1,87 +1,86 @@
 <?php
+
 class Usuario extends CRUD
 {
     protected $table = "usuario";
-    private $idFuncionario;
+    private $id;
     private $nome;
-    private $cpf;
     private $email;
-    private $telefone;
     private $senha;
-    private $tipoFuncionario;
-    public function getIdFuncionario()
+    private $nivel;
+    public $redirect;
+
+    public function getId()
     {
-        return $this->idFuncionario;
+        return $this->id;
     }
-    public function setIdFuncionario($idFuncionario)
+
+    public function setId($id)
     {
-        $this->idFuncionario = $idFuncionario;
+        $this->id = $id;
     }
-    public function getnome()
+
+    public function getNome()
     {
         return $this->nome;
     }
-    public function setnome($nome)
+
+    public function setNome($nome)
     {
         $this->nome = $nome;
     }
-    public function getcpf()
-    {
-        return $this->cpf;
-    }
-    public function setcpf($cpf)
-    {
-        $this->cpf = $cpf;
-    }
-    public function getemail()
+
+    public function getEmail()
     {
         return $this->email;
     }
-    public function setemail($email)
+
+    public function setEmail($email)
     {
         $this->email = $email;
     }
-    public function gettelefone()
-    {
-        return $this->telefone;
-    }
-    public function settelefone($telefone)
-    {
-        $this->telefone = $telefone;
-    }
-    public function getsenha()
+    public function getSenha()
     {
         return $this->senha;
     }
-    public function setsenha($senha)
+
+    public function setSenha($senha)
     {
         $this->senha = $senha;
     }
-    public function gettipoFuncionario()
+    public function getNivel()
     {
-        return $this->tipoFuncionario;
+        return $this->nivel;
     }
-    public function settipoFuncionario($tipoFuncionario)
+
+    public function setNivel($nivel)
     {
-        $this->tipoFuncionario = $tipoFuncionario;
+        $this->nivel = $nivel;
     }
+
+    public function getRedirect()
+    {
+        return $this->redirect;
+    }
+
+    public function setRedirect($redirect)
+    {
+        $this->redirect = $redirect;
+    }
+
     public function add()
     {
         try {
-        $senha_cripto = password_hash($this->senha, PASSWORD_DEFAULT);
-        $sql = "INSERT INTO $this->table (nome, cpf, idFuncionario, email, telefone, senha, tipoFuncionario) VALUES (:nome, :cpf, :idFuncionario, :email, :telefone, :senha, :tipoFuncionario)";
-         $stmt = $this->db->prepare($sql);
-        $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
-        $stmt->bindParam(":cpf", $this->cpf, PDO::PARAM_STR);
-        $stmt->bindParam(":idFuncionario", $this->idFuncionario, PDO::PARAM_STR);
-        $stmt->bindParam(":email", $this->email, PDO::PARAM_STR);
-        $stmt->bindParam(":telefone", $this->telefone, PDO::PARAM_STR);
-        $stmt->bindParam(":senha", $this->senha, PDO::PARAM_STR);
-        $stmt->bindParam(":tipoFuncionario", $this->tipoFuncionario, PDO::PARAM_STR);
-        $stmt->bindParam(":senha", $senha_cripto);
+            $sql = "INSERT INTO {$this->table} (nome, email, senha, nivel_acesso) 
+                VALUES (:nome, :email, :senha, :nivel_acesso)";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(':nome', $this->nome);
+            $stmt->bindParam(':email', $this->email);
+            $stmt->bindParam(':senha', $this->senha);
+            $stmt->bindParam(':nivel_acesso', $this->nivel);
 
-        $stmt->execute();
-         return true;
+            $stmt->execute();
+            return true;
 
         } catch (PDOException $e) {
             if ($e->getCode() == 23000) {
@@ -98,24 +97,21 @@ class Usuario extends CRUD
             return "Erro inesperado: " . $e->getMessage();
         }
     }
-    
-    public function update($campo, $idFuncionario)
+
+
+
+    public function update($campo, $id)
     {
         try {
-        $sql = "UPDATE $this->table SET nome=:nome,cpf=:cpf, email=:email, telefone=:telefone, senha=:senha, tipoFuncionario=:tipoFuncionario  WHERE $campo=:idFuncionario";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam(":nome", $this->nome, PDO::PARAM_STR);
-        $stmt->bindParam(":idFuncionario", $campo, PDO::PARAM_INT);
-        $stmt->bindParam(":cpf", $this->cpf, PDO::PARAM_STR);
-        $stmt->bindParam(":email", $this->email, PDO::PARAM_STR);
-        $stmt->bindParam(":telefone", $this->telefone, PDO::PARAM_STR);
-        $stmt->bindParam(":senha", $this->senha, PDO::PARAM_STR);
-        $stmt->bindParam(":tipoFuncionario", $this->tipoFuncionario, PDO::PARAM_STR);
+            $sql = "UPDATE $this->table SET nome=:nome, nivel_acesso=:nivel_acesso WHERE $campo=:id";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(':nome', $this->nome);
+            $stmt->bindParam(':nivel_acesso', $this->nivel);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+            return true;
 
-         $stmt->execute();
-         return true;
-
-     } catch (PDOException $e) {
+        } catch (PDOException $e) {
             if ($e->getCode() == 23000) {
                 $msg = $e->getMessage();
 
@@ -129,16 +125,16 @@ class Usuario extends CRUD
         }
     }
 
-    public function ValidarLogin($email): mixed
+    public function login()
     {
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
-        $sql = "SELECT * FROM usuario WHERE email = :email";
-        $stmt = $this->db->prepare(query: $sql);
-        $stmt->bindValue(param: ':email', value: $email);
+        $sql = "SELECT * FROM  $this->table WHERE nome = :nome";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':nome', $this->nome);
         $stmt->execute();
-         if ($stmt->rowCount() > 0) {
+        if ($stmt->rowCount() > 0) {
             $usuario = $stmt->fetch(PDO::FETCH_OBJ);
             if (password_verify($this->senha, $usuario->senha)) {
                 $_SESSION['user_id'] = $usuario->id_usuario;
@@ -150,8 +146,8 @@ class Usuario extends CRUD
         }
         return "Usuário ou Senha incorreta. Por favor, tente novamente.";
     }
-    
-     public function logout()
+
+    public function logout()
     {
         session_unset();
         session_destroy();
@@ -215,7 +211,3 @@ class Usuario extends CRUD
     }
 
 }
-
-        
-
-

@@ -83,7 +83,7 @@ class FotoProduto extends CRUD {
             return $stmt->execute();
     }
 
-        public function fotosProduto(int $idProduto) {
+        public function fotosproduto(int $idProduto) {
         $sql = "SELECT * FROM $this->table where fk_produto = :fk_produto";
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(':fk_produto',$idProduto);
