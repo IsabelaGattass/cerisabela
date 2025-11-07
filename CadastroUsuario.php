@@ -17,9 +17,6 @@
 </head>
 
 <body>
-    <header>
-        <?php require_once "_parts/_menu.php"; ?>
-    </header>
     <main class="container">
         <div class="titutlo mt-3">
             <h3>Gerenciar Usuário</h3>
