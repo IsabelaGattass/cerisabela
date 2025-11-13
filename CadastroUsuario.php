@@ -103,7 +103,9 @@
             </div>
         </form>
     </main>
-    <?php require_once "_parts/_footer.php"; ?>
+       <footer>
+        <?php require_once "_parts/_footer.php"; ?>
+    </footer>
     
     <script src="JS/senha.js"></script>
 </body>
