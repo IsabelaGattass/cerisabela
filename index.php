@@ -124,9 +124,9 @@ ini_set('display_errors', 1);
     <?php require_once('page/Localizacao.php'); ?>
   </section>
 </main>
-
+ 
 <!-- ===================== FOOTER ===================== -->
-<footer style="background-color: #bfe5f7ff">
+<footer style="background-color: #E79FC4 ">
   <?php require_once "_parts/_footer.php" ?>
 </footer>
 
