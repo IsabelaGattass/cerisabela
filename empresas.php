@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <!--  -->
+    <!-- database link css -->
+     <link rel="stylesheet" href="https://cdn.datatables.net/2.3.4/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="CSS/baseAdmin.css">
     <title>Empresas</title>
 </head>
@@ -23,7 +24,7 @@
                 <i class="bi bi-plus-circle"></i>Nova Empresa</a>
         </div>
 
-        <div class="table-responsive shadow-sm rounded">
+        <div class="table dataTable ">
             <table class="table table-bordered table-hover align-middle text-center">
                 <thead class="table-primary">
                     <tr>
@@ -92,6 +93,16 @@
         <footer>
         <?php require_once("_parts/_footer.php"); ?>
     </footer>
+
+    <!-- link jquery -->
+     <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js" type="text/javascript"></script>
+
+    <!-- link database JS -->
+
+    <script src="https://cdn.datatables.net/2.3.4/js/dataTables.min.js"></script>
+
+    <!-- link database JS bootstrap -->
+     <script src="https://cdn.datatables.net/2.3.4/js/dataTables.bootstrap5.min.js"> </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </body>

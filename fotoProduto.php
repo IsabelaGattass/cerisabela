@@ -26,7 +26,7 @@ if (filter_has_var(INPUT_GET, "idProduto")) {
 
 <body>
     <header>
-        <?php require_once "_parts/_menu2.php"; ?>
+        <?php require_once "_parts/_menu.php"; ?>
     </header>
     <main class="container mt-3">
         <div class="mt-3">
