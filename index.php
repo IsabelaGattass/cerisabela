@@ -126,7 +126,7 @@ ini_set('display_errors', 1);
 </main>
  
 <!-- ===================== FOOTER ===================== -->
-<footer style="background-color: #E79FC4 ">
+<footer style="background-color: #7ec2f0ff ">
   <?php require_once "_parts/_footer.php" ?>
 </footer>
 
