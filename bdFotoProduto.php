@@ -1,73 +1,63 @@
 <?php
-
 spl_autoload_register(function ($class) {
     require_once "classes/{$class}.class.php";
 });
 
-$foto = new FotoProduto();
-$imgFile = new Imagem(prefixo: "produt_");
+try {
+    $foto = new FotoProduto();
+    $imgFile = new Imagem(prefixo: "produt_");
+} catch (Throwable $th) {
+    die("Erro ao carregar classes: " . $th->getMessage());
+}
 
 if (filter_has_var(INPUT_POST, "btnGravar")):
+
     $foto->iniciarTransacao();
 
     try {
-        $idFoto = filter_input(INPUT_POST, 'idFoto');
-        $idProduto = filter_input(INPUT_POST, 'idProduto');
+        // Inicializa variáveis
+        $idFoto = filter_input(INPUT_POST, 'idFoto', FILTER_SANITIZE_NUMBER_INT) ?? null;
+        $idProduto = filter_input(INPUT_POST, 'idProduto', FILTER_SANITIZE_NUMBER_INT) ?? null;
+        $fotoAntiga = filter_input(INPUT_POST, 'fotoAntiga', FILTER_SANITIZE_SPECIAL_CHARS) ?? '';
+        $nomeFoto = null;
 
-        $fotoAntigaFrente = filter_input(INPUT_POST, 'fotoAntigaFrente');
-        $fotoAntigaVerso = filter_input(INPUT_POST, 'fotoAntigaVerso');
-
-        $foto->setProduto($idProduto);
-
-        // Se novas imagens forem enviadas, faz upload e apaga as antigas
-        if (!empty($_FILES['fotoFrente']['name'])) {
-            $nomeFrente = $imgFile->upload($_FILES['fotoFrente']);
-            $foto->setFrente($nomeFrente);
-            if (!empty($fotoAntigaFrente)) {
-                $imgFile->deletar($fotoAntigaFrente);
-            }
-        } else {
-            $foto->setFrente($fotoAntigaFrente);
+        // Define produto relacionado
+        if ($idProduto) {
+            $foto->setProduto($idProduto);
         }
 
-        if (!empty($_FILES['fotoVerso']['name'])) {
-            $nomeVerso = $imgFile->upload($_FILES['fotoVerso']);
-            $foto->setVerso($nomeVerso);
-            if (!empty($fotoAntigaVerso)) {
-                $imgFile->deletar($fotoAntigaVerso);
+        // Upload da foto
+        if (!empty($_FILES['foto']['name'])) {
+            $nomeFoto = $imgFile->upload($_FILES['foto']);
+            $foto->setFoto($nomeFoto);
+
+            // Apaga foto antiga, se existir
+            if (!empty($fotoAntiga)) {
+                $imgFile->deletar($fotoAntiga);
             }
         } else {
-            $foto->setVerso($fotoAntigaVerso);
+            $foto->setFoto($fotoAntiga);
         }
 
-        $foto->setLegenda(filter_input(INPUT_POST, 'legenda'));
-        $foto->setAlternativo(filter_input(INPUT_POST, 'textoAlt'));
+        // Demais informações
+        $foto->setLegenda(filter_input(INPUT_POST, 'legenda', FILTER_SANITIZE_SPECIAL_CHARS));
+        $foto->setAlternativo(filter_input(INPUT_POST, 'textoAlt', FILTER_SANITIZE_SPECIAL_CHARS));
 
         // Se for novo cadastro
-        if (empty($idFoto)):
-            if ($foto->add()) {
-                $mensagem = "Fotos adicionadas com sucesso!";
-            } else {
-                $mensagem = "Erro ao adicionar fotos!";
-            }
+        if (empty($idFoto)) {
+            $sucesso = $foto->add();
+            $mensagem = $sucesso ? "Foto adicionada com sucesso!" : "Erro ao adicionar foto!";
+        } else {
+            $sucesso = $foto->update('id_foto', $idFoto);
+            $mensagem = $sucesso ? "Foto atualizada com sucesso!" : "Erro ao atualizar foto!";
+        }
 
-            // Se for edição
-        else:
-            if ($foto->update('id_foto', $idFoto)) {
-                $mensagem = "Fotos atualizadas com sucesso!";
-            } else {
-                $mensagem = "Erro ao atualizar fotos!";
-            }
-        endif;
-
-        echo "<script>window.alert('$mensagem');window.location.href='FotoProduto.php?idProduto=$idProduto'</script>";
         $foto->confirmarTransacao();
+        echo "<script>window.alert('$mensagem');window.location.href='FotoProduto.php?idProduto=$idProduto'</script>";
 
     } catch (Throwable $th) {
-        if (!empty($nomeFrente))
-            $imgFile->deletar($nomeFrente);
-        if (!empty($nomeVerso))
-            $imgFile->deletar($nomeVerso);
+        // Em caso de erro, apaga possível upload
+        if (!empty($nomeFoto)) $imgFile->deletar($nomeFoto);
 
         $foto->cancelarTransacao();
         $erro = addslashes($th->getMessage());
@@ -75,17 +65,20 @@ if (filter_has_var(INPUT_POST, "btnGravar")):
     }
 
 elseif (filter_has_var(INPUT_POST, "btnDeletar")):
+
     try {
         $foto->iniciarTransacao();
         $idFoto = intval(filter_input(INPUT_POST, "idFoto"));
         $ftDel = $foto->search('id_foto', $idFoto);
 
-        // Deleta os dois arquivos do servidor
-        $imgFile->deletar($ftDel->frente);
-        $imgFile->deletar($ftDel->verso);
+        if ($ftDel) {
+            // Apaga a foto do servidor
+            if (!empty($ftDel->foto)) $imgFile->deletar($ftDel->foto);
 
-        if ($foto->delete('id_foto', $idFoto)) {
-            header("location:FotoProduto.php?idProduto=$ftDel->fk_produto");
+            if ($foto->delete('id_foto', $idFoto)) {
+                header("location:FotoProduto.php?idProduto={$ftDel->fk_produto}");
+                exit;
+            }
         }
         $foto->confirmarTransacao();
     } catch (Throwable $th) {
@@ -96,5 +89,6 @@ elseif (filter_has_var(INPUT_POST, "btnDeletar")):
             window.open(document.referrer, '_self');
         </script>";
     }
+
 endif;
 ?>

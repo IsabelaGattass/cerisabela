@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <!-- database link css -->
      <link rel="stylesheet" href="https://cdn.datatables.net/2.3.4/css/dataTables.bootstrap5.min.css">
+
     <link rel="stylesheet" href="CSS/baseAdmin.css">
     <title>Empresas</title>
 </head>
@@ -24,7 +25,7 @@
                 <i class="bi bi-plus-circle"></i>Nova Empresa</a>
         </div>
 
-        <div class="table dataTable ">
+        <div class="table dataTable">
             <table class="table table-bordered table-hover align-middle text-center">
                 <thead class="table-primary">
                     <tr>
@@ -104,6 +105,10 @@
     <!-- link database JS bootstrap -->
      <script src="https://cdn.datatables.net/2.3.4/js/dataTables.bootstrap5.min.js"> </script>
 
+     <!-- link para o JS e configuração -->
+      <script src="JS/paginacao.js"> </script>
+
+      
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

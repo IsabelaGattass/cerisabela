@@ -7,16 +7,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="CSS/baseAdmin.css">
     <link rel="stylesheet" href="CSS/baseSite.css">
-    <title>Adicionar Fotos do Produto</title>
+    <title>Adicionar Foto do Produto</title>
 </head>
 
 <body>
     <header>
         <?php require_once "_parts/_menu.php"; ?>
     </header>
+
     <main class="container">
         <div class="titulo mt-3">
-            <h3>Adicionar Fotos</h3>
+            <h3>Adicionar Foto do Produto</h3>
         </div>
 
         <?php
@@ -32,7 +33,7 @@
             $f = new FotoProduto();
             $idFoto = intval(filter_input(INPUT_POST, 'idFoto'));
             $foto = $f->search('id_foto', $idFoto);
-            $idProduto = $foto->fk_produto;
+            $idProduto = $foto->fk_produto ?? null;
         } elseif (filter_has_var(INPUT_GET, "idProduto")) {
             $idProduto = filter_input(INPUT_GET, "idProduto");
         }
@@ -54,20 +55,17 @@
                     class="form-control" value="<?= $foto->alternativo ?? ''; ?>">
             </div>
 
-            <!-- Foto Frente -->
+            <!-- Foto -->
             <div class="col-md-6 mt-3">
-                <label for="fotoFrente" class="form-label">Foto da Frente</label>
-                <input type="file" name="fotoFrente" id="fotoFrente" class="form-control" accept=".png, .jpg, .jpeg">
-                <?php if (!empty($foto->frente)): ?>
+                <label for="foto" class="form-label">Foto</label>
+                <input type="file" name="foto" id="foto" class="form-control" accept=".png, .jpg, .jpeg">
+
+                <?php if (!empty($foto->foto)): ?>
                     <div class="mt-2">
-                        <img src="uploads/<?= $foto->frente ?>" alt="Foto da Frente" class="img-thumbnail" width="150">
+                        <img src="uploads/<?= $foto->foto ?>" alt="Foto do Produto" class="img-thumbnail" width="150">
                         <p class="text-muted mb-0">Foto atual</p>
                     </div>
                 <?php endif; ?>
-            </div>
-
-       
-   
             </div>
 
             <div class="col-12 mt-3">

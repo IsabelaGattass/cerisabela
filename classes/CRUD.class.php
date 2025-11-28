@@ -41,4 +41,21 @@ abstract class CRUD {
             return false;
         }
     }
+
+    // Métodos para iniciar, confirmar e cancelar transações
+    public function iniciarTransacao()
+    {
+        $this->db->beginTransaction();
+    }
+
+    public function confirmarTransacao()
+    {
+        $this->db->commit();
+    }
+
+    public function cancelarTransacao()
+    {
+        $this->db->rollBack();
+    }
 }
+
